@@ -4,255 +4,304 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>100 apps, one question: can Composio ship it as an agent toolkit today?</title>
-<meta name="description" content="Agent-researched, browser-verified study of auth, access gating, API surface and MCP for 100 apps, with patterns, a 100-row matrix and an honest accuracy audit.">
+<meta name="description" content="Agent-researched, browser-verified study of auth, access gating, API surface and MCP for 100 apps: patterns, a 100-row matrix, the agent, and an honest accuracy audit.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0b1220;--ink2:#334155;--mut:#64748b;--line:#e5e7eb;--bg:#f8f7f4;--card:#fff;--acc:#4338ca;--acc2:#eef2ff;
---ok:#15803d;--okb:#dcfce7;--warn:#a16207;--warnb:#fef3c7;--bad:#b91c1c;--badb:#fee2e2;--r:14px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font:15px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-a{color:var(--acc)}code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.86em}
-.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
-nav.top{position:sticky;top:0;z-index:20;background:rgba(248,247,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav.top .wrap{display:flex;gap:18px;align-items:center;height:50px;overflow-x:auto;white-space:nowrap}
-nav.top a{color:var(--ink2);text-decoration:none;font-weight:500;font-size:13.5px}nav.top a:hover{color:var(--acc)}
-nav.top .brand{font-weight:800;color:var(--ink);margin-right:6px}
-header{padding:46px 0 18px}
-.eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);font-weight:700}
-h1{font-size:clamp(28px,4.2vw,44px);line-height:1.12;margin:10px 0 12px;letter-spacing:-.02em;font-weight:800}
-.lede{font-size:17.5px;color:var(--ink2);max-width:820px;margin:0}
-.meta{margin-top:14px;font-size:13px;color:var(--mut);display:flex;flex-wrap:wrap;gap:6px 16px}
-section{padding:34px 0;border-top:1px solid var(--line)}
-h2{font-size:24px;letter-spacing:-.01em;margin:0 0 6px}h2 .n{color:var(--acc);margin-right:8px}
-h3{font-size:16px;margin:0 0 10px}h4{font-size:13px;margin:12px 0 6px;color:var(--ink2);text-transform:uppercase;letter-spacing:.05em}
-.sub-h{color:var(--mut);margin:0 0 20px;max-width:860px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0 8px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
-.kpi .v{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1}.kpi .l{font-size:12.5px;color:var(--mut);margin-top:4px}
-.kpi.ok .v{color:var(--ok)}.kpi.warn .v{color:var(--warn)}.kpi.bad .v{color:var(--bad)}.kpi.acc .v{color:var(--acc)}
-ol.head{counter-reset:h;list-style:none;padding:0;margin:0;display:grid;gap:10px}
-ol.head li{counter-increment:h;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:12px 16px 12px 52px;position:relative}
-ol.head li:before{content:counter(h);position:absolute;left:16px;top:11px;width:24px;height:24px;border-radius:50%;background:var(--acc2);color:var(--acc);font-weight:800;font-size:13px;display:grid;place-items:center}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid2>*,.grid3>*{min-width:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}.hide-s{display:none}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
-.bar{display:grid;grid-template-columns:132px 1fr 46px;align-items:center;gap:10px;margin:7px 0;font-size:13.5px}
-.bt{background:#f1f5f9;border-radius:6px;height:14px;overflow:hidden}.bf{display:block;height:100%;background:var(--acc);border-radius:6px}
-.bf.ok{background:var(--ok)}.bf.warn{background:#d97706}.bf.bad{background:var(--bad)}.bv{font-weight:700;text-align:right}
-table{border-collapse:collapse;width:100%;font-size:13.5px}
-th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);background:#fbfbfa}
-#t thead th{position:sticky;top:0;z-index:5;cursor:pointer;user-select:none}
+:root{--ink:#0f172a;--ink2:#334155;--mut:#64748b;--line:#e6e4df;--bg:#faf9f6;--card:#fff;--soft:#f3f2ee;
+--acc:#4338ca;--acc2:#eef0ff;--ok:#15803d;--okb:#e3f6e8;--warn:#a15c07;--warnb:#fdf1d8;--bad:#b42318;--badb:#fde8e6;--r:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:17px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-underline-offset:3px}code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.84em;background:var(--soft);padding:1px 6px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}@media(max-width:700px){.wrap{padding:0 18px}}
+.prose{max-width:760px}
+nav.top{position:sticky;top:0;z-index:30;background:rgba(250,249,246,.9);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:26px;align-items:center;height:62px;overflow-x:auto;white-space:nowrap}
+nav.top a{color:var(--ink2);text-decoration:none;font-weight:500;font-size:15px}nav.top a:hover{color:var(--acc)}
+nav.top .brand{font-weight:800;color:var(--ink);margin-right:auto;font-size:15px}
+header.hero{padding:84px 0 64px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:700}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.08;margin:18px 0 22px;letter-spacing:-.03em;font-weight:800;max-width:980px}
+.lede{font-size:20px;line-height:1.65;color:var(--ink2);max-width:780px;margin:0}
+.answer{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:48px 0 28px}
+@media(max-width:760px){.answer{grid-template-columns:1fr}}
+.ans{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 28px 24px;border-top:6px solid}
+.ans.ok{border-top-color:var(--ok)}.ans.warn{border-top-color:#d98a07}.ans.bad{border-top-color:var(--bad)}
+.ans .v{font-size:60px;font-weight:800;line-height:1;letter-spacing:-.03em}.ans.ok .v{color:var(--ok)}.ans.warn .v{color:var(--warn)}.ans.bad .v{color:var(--bad)}
+.ans .t{font-size:19px;font-weight:700;margin-top:12px}.ans p{margin:6px 0 0;color:var(--ink2);font-size:15.5px;line-height:1.55}
+.facts{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15.5px;color:var(--ink2);padding:20px 0 0;border-top:1px solid var(--line)}
+.facts b{color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:15px;font-weight:600;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:#c9c6be}.btn.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+section{padding:88px 0;border-top:1px solid var(--line)}
+.sec-k{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:700}
+h2{font-size:clamp(28px,3.4vw,38px);letter-spacing:-.02em;line-height:1.15;margin:10px 0 14px}
+.sec-sub{font-size:18.5px;color:var(--ink2);max-width:780px;margin:0 0 44px}
+h3{font-size:20px;margin:0 0 12px;letter-spacing:-.01em;line-height:1.35}
+h4{font-size:13px;margin:22px 0 10px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid2>*,.grid3>*{min-width:0}@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.mut{color:var(--mut)}.small{font-size:14.5px}
+.caption{font-size:14.5px;color:var(--mut);margin:16px 0 0;line-height:1.6}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;counter-reset:p}@media(max-width:900px){.pgrid{grid-template-columns:1fr}}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 32px 30px;counter-increment:p;position:relative}
+.pcard:before{content:counter(p);position:absolute;top:28px;right:30px;font-size:13px;font-weight:700;color:var(--mut)}
+.pcard .big{font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--acc)}.pcard .big small{font-size:24px;color:var(--mut);font-weight:700}
+.pcard h3{font-size:21px;margin:14px 0 10px}.pcard p{margin:0;color:var(--ink2);font-size:16.5px;line-height:1.7}
+.bar{display:grid;grid-template-columns:120px 1fr 40px;align-items:center;gap:14px;margin:14px 0;font-size:15.5px}
+.bt{background:var(--soft);border-radius:8px;height:16px;overflow:hidden}.bf{display:block;height:100%;background:var(--acc);border-radius:8px}
+.bf.ok{background:var(--ok)}.bf.warn{background:#d98a07}.bf.bad{background:var(--bad)}.bv{font-weight:700;text-align:right}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:16px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);font-weight:700;background:var(--card)}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-.stack{display:flex;height:20px;border-radius:6px;overflow:hidden;min-width:120px;font-size:11px;font-weight:700;color:#fff}
-.stack .s{display:grid;place-items:center}.s.ok{background:var(--ok)}.s.warn{background:#d97706}.s.bad{background:var(--bad)}
-.chip{display:inline-block;padding:1px 9px;border-radius:999px;font-size:12px;font-weight:600}
+.tscroll{overflow-x:auto}
+.stack{display:flex;height:26px;border-radius:8px;overflow:hidden;min-width:150px;font-size:12.5px;font-weight:700;color:#fff}
+.stack .s{display:grid;place-items:center}.s.ok{background:var(--ok)}.s.warn{background:#d98a07}.s.bad{background:var(--bad)}
+.chip{display:inline-block;padding:3px 12px;border-radius:999px;font-size:13.5px;font-weight:700}
 .chip.ok{background:var(--okb);color:var(--ok)}.chip.warn{background:var(--warnb);color:var(--warn)}.chip.bad{background:var(--badb);color:var(--bad)}
-.tag{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:0 6px;border-radius:4px;background:var(--acc2);color:var(--acc)}
+ul.clean{margin:0;padding-left:22px}ul.clean li{margin:10px 0;line-height:1.6}
+.toolbar{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:18px;display:grid;gap:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink2);cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.frow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.frow select,.frow input{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.frow input{flex:1;min-width:240px}.count{color:var(--mut);font-size:15px;margin-left:auto;font-weight:600}
+.ftable{background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+#t thead th{position:sticky;top:62px;z-index:10;cursor:pointer;user-select:none;border-bottom:2px solid var(--line)}
+#t thead th:first-child{border-top-left-radius:var(--r)}#t thead th:last-child{border-top-right-radius:var(--r)}
+#t thead th:hover{color:var(--ink)}
+#t tr.row:hover td{background:#fcfbf9}
+#t td.id{color:var(--mut);font-size:14px}
+.app{min-width:230px}
+button.exp{all:unset;cursor:pointer;font-weight:700;font-size:16.5px;color:var(--ink);display:inline-flex;gap:8px;align-items:center}
+button.exp:hover,button.exp:focus-visible{color:var(--acc)}.chev{font-size:11px;color:var(--mut);transition:transform .15s}
+button.exp[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.what{color:var(--ink2);font-size:15px;line-height:1.5;margin-top:4px}.catn{color:var(--mut);font-size:13.5px;margin-top:6px}
+.sub{color:var(--mut);font-size:14px;margin-top:4px;line-height:1.4}
+.auth{display:flex;flex-wrap:wrap;gap:6px}.a{font-size:13.5px;padding:2px 9px;border-radius:7px;background:var(--soft);color:var(--ink2);white-space:nowrap}
+.a.p{background:var(--ink);color:#fff;font-weight:600}
+.ss{font-size:13.5px;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap}.ss.ok{background:var(--okb);color:var(--ok)}.ss.bad{background:var(--badb);color:var(--bad)}
+.m{font-size:14.5px;color:var(--ink2);white-space:nowrap}.m.on{color:var(--acc);font-weight:700}.m.off{color:var(--mut)}
+.tag{display:inline-block;margin-left:8px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1px 7px;border-radius:6px;background:var(--acc2);color:var(--acc)}
 .tag.bad{background:var(--badb);color:var(--bad)}
-.sub{color:var(--mut);font-size:12.5px;line-height:1.35}.mut{color:var(--mut)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;align-items:center}
-.filters select,.filters input{font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
-.filters input{min-width:220px}.count{margin-left:auto;color:var(--mut);font-size:13px}
-.tablewrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:auto;max-height:780px}
-button.exp{all:unset;cursor:pointer;font-weight:700;color:var(--ink)}button.exp:hover,button.exp:focus-visible{color:var(--acc);text-decoration:underline}
-tr.det td{background:#fbfbfa}.detg{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}@media(max-width:860px){.detg{grid-template-columns:1fr}}
-ul.ev{margin:0;padding-left:18px}ul.ev li{margin:4px 0;word-break:break-all}.evn{color:var(--ink2);font-size:12.5px;word-break:normal}
-.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:stretch;margin:14px 0 18px}
-@media(max-width:980px){.flow{grid-template-columns:1fr 1fr}}
-.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;position:relative}
-.step .k{font-size:11px;font-weight:800;color:var(--acc);text-transform:uppercase;letter-spacing:.06em}
-.step b{display:block;margin:2px 0 4px;font-size:14px}.step p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.45}
-.step .out{margin-top:8px;font-size:12px;font-weight:700;color:var(--ink)}
-.step.human{border-color:#fca5a5;background:#fff7f7}.step.human .k{color:var(--bad)}
-.acc-chart{display:grid;gap:10px}.ac-row{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:center;font-size:13.5px}
-.ac-bars{display:grid;gap:4px}.ac-b{display:grid;grid-template-columns:1fr 64px;gap:8px;align-items:center}
-.ac-b .t{background:#f1f5f9;border-radius:5px;height:16px;overflow:hidden;position:relative}
-.ac-b .f{height:100%;border-radius:5px}.f1{background:#94a3b8}.f2{background:#818cf8}.f3{background:var(--acc)}
-.legend{display:flex;gap:14px;font-size:12.5px;color:var(--mut);margin:6px 0 0}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 16px;font-size:14px;color:#713f12}
-.honest{background:var(--acc2);border:1px solid #c7d2fe;border-radius:12px;padding:14px 16px;font-size:14px}
-ul.tight{margin:0;padding-left:18px}ul.tight li{margin:5px 0}
-pre{background:#0b1220;color:#e2e8f0;border-radius:12px;padding:14px 16px;overflow:auto;font-size:12.8px;line-height:1.55}
-.btn{display:inline-block;font:inherit;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}
-.btn.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
-footer{padding:30px 0 60px;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+a.evc{font-weight:700}
+tr.det td{background:#fbfaf7;padding:26px 28px}
+.detg{display:grid;grid-template-columns:1.2fr 1fr;gap:34px}@media(max-width:900px){.detg{grid-template-columns:1fr}}
+.detg h4:first-child{margin-top:0}
+ul.ev{margin:0;padding-left:20px;font-size:15px}ul.ev li{margin:10px 0;word-break:break-word}.evn{color:var(--ink2);font-size:14.5px;margin-top:2px}
+tr.det ul{font-size:15px}tr.det li{margin:8px 0}
+.legend-row{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--mut);margin-top:14px}
+@media(max-width:820px){.hide-s{display:none}.ftable{overflow-x:auto}#t thead th{position:static}}
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl li{display:grid;grid-template-columns:64px 1fr 230px;gap:22px;padding:0 0 34px;position:relative}
+.tl li:before{content:"";position:absolute;left:31px;top:64px;bottom:0;width:2px;background:var(--line)}.tl li:last-child:before{display:none}
+.tl .dot{width:64px;height:64px;border-radius:50%;background:var(--card);border:2px solid var(--acc);color:var(--acc);display:grid;place-items:center;font-weight:800;font-size:20px}
+.tl li.h .dot{border-color:var(--bad);color:var(--bad)}
+.tl h3{margin:6px 0 6px}.tl p{margin:0;color:var(--ink2);font-size:16.5px;max-width:640px}
+.tl .res{align-self:start;margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:15px;font-weight:600}
+.tl .res span{display:block;font-size:12.5px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:820px){.tl li{grid-template-columns:52px 1fr}.tl .dot{width:52px;height:52px;font-size:17px}.tl li:before{left:25px;top:52px}.tl .res{grid-column:2}}
+.honest{background:var(--acc2);border:1px solid #d3d7fb;border-radius:var(--r);padding:22px 26px;font-size:16px;line-height:1.7;margin-top:24px}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:24px}
+@media(max-width:900px){.prog{grid-template-columns:1fr 1fr}}
+.prog>div{padding:28px 26px;border-right:1px solid var(--line)}.prog>div:last-child{border-right:none}
+.prog .v{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}.prog .l{font-weight:700;margin-top:10px;font-size:16.5px}.prog p{margin:6px 0 0;color:var(--ink2);font-size:14.5px;line-height:1.55}
+.prog .final{background:var(--acc2)}.prog .final .v{color:var(--acc)}
+.acc-row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;margin:18px 0}
+.acc-b{display:grid;grid-template-columns:1fr 70px;gap:12px;align-items:center;margin:6px 0}
+.acc-b .t{background:var(--soft);border-radius:7px;height:18px;overflow:hidden}.acc-b .f{display:block;height:100%;border-radius:7px}
+.f1{background:#a3acbd}.f2{background:#8b8ff0}.f3{background:var(--acc)}
+.legend{display:inline-flex;align-items:center;gap:7px}.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+s{color:var(--mut)}
+pre{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:20px 22px;overflow:auto;font-size:14px;line-height:1.75;margin:0}
+footer{padding:44px 0 80px;color:var(--mut);font-size:15px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 <nav class="top" aria-label="Sections"><div class="wrap">
-<span class="brand">Composio app research</span>
-<a href="#answer">Answer</a><a href="#patterns">Patterns</a><a href="#findings">Findings</a><a href="#agent">Agent</a><a href="#verification">Verification</a><a href="#run">Run it</a><a href="#limits">Limits</a>
+<span class="brand">Composio &middot; 100-app research</span>
+<a href="#patterns">Patterns</a><a href="#findings">Findings</a><a href="#agent">Agent</a><a href="#verification">Verification</a><a href="#run">Run it</a><a href="#limits">Limits</a>
 </div></nav>
 
-<header class="wrap" id="answer">
-<div class="eyebrow">AI Product Ops Intern, take-home &middot; Piyush Samdariya</div>
-<h1>100 apps, one question: can Composio ship each one as an agent toolkit today?</h1>
-<p class="lede">An agent researched auth, access gating, API surface and MCP for every app. Each claim was then checked against the vendor's own pages through rule checks, cross-checks against independent sources, and a real-browser audit. Below: the patterns first, then the 100-row matrix, how the agent works, and how accurate it is.</p>
-<div class="meta"><span>Researched 23 Nov 2026</span><span>$pages pages cited as evidence</span><span>Every row has evidence links</span><a href="$repo">Source repo</a><a href="${blob}docs/results.json">results.json</a><a href="${blob}docs/results.csv">results.csv</a><a href="${blob}docs/llms.txt">llms.txt</a></div>
-<div class="kpis">
-<div class="kpi ok"><div class="v">$ready</div><div class="l">ready to build today</div></div>
-<div class="kpi warn"><div class="v">$friction</div><div class="l">buildable, with a review, paid plan or key request in the way</div></div>
-<div class="kpi bad"><div class="v">$blocked</div><div class="l">blocked: partnership or no public API</div></div>
-<div class="kpi"><div class="v">$selfserve / $gated</div><div class="l">self-serve vs gated credentials</div></div>
-<div class="kpi acc"><div class="v">$mcp</div><div class="l">have a vendor MCP that acts on account data</div></div>
-<div class="kpi acc"><div class="v">$a1 &rarr; $a2</div><div class="l">audit accuracy, first pass &rarr; after automated loops ($ar apps, $at fields)</div></div>
+<header class="hero wrap" id="top">
+<div class="eyebrow">AI Product Ops Intern take-home &middot; Piyush Samdariya &middot; 23 Nov 2026</div>
+<h1>Which of these 100 apps can Composio ship as an agent toolkit today?</h1>
+<p class="lede">An agent researched every app's auth, credential access, API and MCP, and saved the source behind each answer. The answers were then verified against the vendors' own pages. Start with the patterns; the full table, the agent and the accuracy audit follow.</p>
+<div class="answer" aria-label="The answer">
+<div class="ans ok"><div class="v">$ready</div><div class="t">Ready today</div><p>Self-serve credentials and a public API. Build and test a toolkit now.</p></div>
+<div class="ans warn"><div class="v">$friction</div><div class="t">Buildable, with friction</div><p>An app review, a paid plan or a key request stands in the way.</p></div>
+<div class="ans bad"><div class="v">$blocked</div><div class="t">Blocked</div><p>Needs a partnership, or the app has no public API.</p></div>
 </div>
+<div class="facts">
+<span><b>$selfserve / $gated</b> self-serve vs gated</span>
+<span><b>$mcp</b> have an official MCP</span>
+<span><b>$pages</b> source pages cited</span>
+<span>Accuracy <b>$a1 &rarr; $a2</b> after automated checks; <b>$bfh/$bt</b> on a fresh holdout</span>
+</div>
+<div class="links"><a class="btn pri" href="#findings">See all 100 apps</a><a class="btn" href="$repo">Source repo</a><a class="btn" href="${blob}docs/results.json">results.json</a><a class="btn" href="${blob}docs/results.csv">results.csv</a></div>
 </header>
 
-<section class="wrap" id="patterns">
-<h2><span class="n">1</span>The patterns</h2>
-<p class="sub-h">The headline first. Every number is computed from the dataset, so the claims and the table cannot drift apart.</p>
-<ol class="head">$headline</ol>
+<section id="patterns"><div class="wrap">
+<div class="sec-k">1 &middot; The patterns</div>
+<h2>What 100 apps have in common</h2>
+<p class="sec-sub">Six findings, each computed from the dataset below, so the claims and the table can't drift apart.</p>
+<div class="pgrid">$headline</div>
 
-<div class="grid2" style="margin-top:20px">
-<div class="card"><h3>Gating by category</h3>
-<div class="tablewrap" style="max-height:none;border:none"><table>
-<thead><tr><th>Category</th><th class="num" title="self-serve credentials out of 10">Self-serve</th><th>Ready / friction / blocked</th><th class="num" title="OAuth2 is the primary auth">OAuth</th><th class="num" title="official MCP">MCP</th><th class="num" title="already a full Composio toolkit">In Composio</th><th>Main gate</th></tr></thead>
+<h2 style="margin-top:80px;font-size:28px">The numbers behind the patterns</h2>
+<div class="card" style="margin-top:24px"><h3>Gating by category</h3>
+<div class="tscroll"><table>
+<thead><tr><th>Category</th><th class="num">Self-serve</th><th>Ready / friction / blocked</th><th class="num">OAuth primary</th><th class="num">Official MCP</th><th class="num">In Composio</th><th>Main gate</th></tr></thead>
 <tbody>$cat_table</tbody></table></div>
-<p class="mut" style="font-size:12.5px;margin:10px 0 0">"In Composio" means a full toolkit exists in Composio's public catalog (1,841 toolkits), checked 23 Nov 2026.</p>
+<p class="caption">Each category has 10 apps. "In Composio" counts apps that already have a full toolkit in Composio's public catalog (1,841 toolkits, checked 23 Nov 2026).</p>
 </div>
-<div class="grid2" style="grid-template-columns:1fr;gap:16px">
-<div class="card"><h3>How developers get credentials</h3>$access_bars<p class="mut" style="font-size:12.5px;margin:8px 0 0">Green is self-serve (open, free, trial). Amber is a paid plan or an approval. Red is a sales or partnership gate.</p></div>
-<div class="card"><h3>Primary auth a toolkit should use</h3>$prim_bars<p class="mut" style="font-size:12.5px;margin:8px 0 0">$offers_oauth apps offer OAuth2, $offers_static offer a static key or token, and $both offer both.</p></div>
+<div class="grid3" style="margin-top:24px">
+<div class="card"><h3>How developers get credentials</h3>$access_bars<p class="caption">Green: self-serve. Amber: paid plan or approval. Red: sales or partnership.</p></div>
+<div class="card"><h3>Best primary auth for a toolkit</h3>$prim_bars<p class="caption">$offers_static apps offer a key or token, $offers_oauth offer OAuth2, and $both offer both.</p></div>
+<div class="card"><h3>Main blockers</h3>$blocker_bars<p class="caption">From the $friction friction and $blocked blocked apps. "local only" means open-source CLIs that ship as sandboxed skills.</p></div>
 </div>
+<div class="grid2" style="margin-top:24px">
+<div class="card"><h3>Easy wins: ready now, no full Composio toolkit yet</h3><ul class="clean">$easy_api</ul><h4>MCP-only product</h4><ul class="clean">$easy_mcp</ul><h4>Local tools, ship as skills</h4><ul class="clean">$easy_local</ul></div>
+<div class="card"><h3>Needs outreach or a sponsored account</h3><ul class="clean">$outreach</ul><p class="caption">Partner apps need a business conversation. Paid-plan apps need a sponsored developer account; Ecwid, for example, upgrades developer stores for free on request.</p></div>
 </div>
+<div class="card" style="margin-top:24px"><h3>Facts that changed in 2025&ndash;26, which a model's memory gets wrong</h3><ul class="clean">$moving</ul>
+<p class="caption">That's why research has to run against live docs. The memory-only first pass was weakest on MCP ($miss_mcp of $ar sampled answers wrong) and on access ($miss_access wrong).</p></div>
+</div></section>
 
-<div class="grid3" style="margin-top:16px">
-<div class="card"><h3>Most common blockers</h3>$blocker_bars<p class="mut" style="font-size:12.5px;margin:8px 0 0">Counted on the $friction friction and $blocked blocked rows. "local only" covers two open-source CLIs that ship as sandboxed skills.</p></div>
-<div class="card"><h3>Easy wins: not yet a Composio toolkit, ready now</h3><ul class="tight">$easy_api</ul><h4>MCP-only product</h4><ul class="tight">$easy_mcp</ul><h4>Local tools, shipped as skills</h4><ul class="tight">$easy_local</ul></div>
-<div class="card"><h3>Needs outreach or a sponsored account</h3><ul class="tight">$outreach</ul><p class="mut" style="font-size:12.5px;margin:8px 0 0">Partner apps need a business conversation. Paid-plan apps need a sponsored developer account; Ecwid, for example, upgrades developer stores for free on request by email.</p></div>
-</div>
-
-<div class="card" style="margin-top:16px"><h3>Moving targets: facts that changed in 2025-26, which a model's memory gets wrong</h3><ul class="tight">$moving</ul>
-<p class="mut" style="font-size:12.5px;margin:8px 0 0">This is why research has to be re-run against live docs, and why the first pass, which answered from memory, missed most on MCP ($miss_mcp of its $ar sampled MCP answers wrong) and on access ($miss_access wrong).</p></div>
-</section>
-
-<section class="wrap" id="findings">
-<h2><span class="n">2</span>The findings: all 100 apps</h2>
-<p class="sub-h">Click an app name to see the pages behind it and every change the verification loops made. Bold auth is the primary method. Use the filters to slice the table, or read it as plain HTML: the table is rendered on the server, so it works without JavaScript.</p>
-<div class="filters" role="search">
-<input id="q" type="search" placeholder="Search app or description" aria-label="Search">
-<select id="fc" aria-label="Category"><option value="">All categories</option>$cats_opts</select>
+<section id="findings"><div class="wrap">
+<div class="sec-k">2 &middot; The findings</div>
+<h2>All 100 apps</h2>
+<p class="sec-sub">Click any app to see the pages behind its row and every correction the verification loops made. In the Auth column, the dark tag is the method a toolkit should use.</p>
+<div class="toolbar" role="search">
+<div class="pills" id="pills"><button type="button" class="pill" data-cat="" aria-pressed="true">All categories</button>$cats_opts</div>
+<div class="frow">
+<input id="q" type="search" placeholder="Search apps, e.g. 'payments' or 'Stripe'" aria-label="Search apps">
 <select id="fv" aria-label="Verdict"><option value="">Any verdict</option><option>ready</option><option>friction</option><option>blocked</option></select>
-<select id="fa" aria-label="Access"><option value="">Any access</option><option>open</option><option>free</option><option>trial</option><option>paid</option><option>approval</option><option>partner</option></select>
+<select id="fs" aria-label="Self-serve"><option value="">Self-serve or gated</option><option value="self-serve">Self-serve only</option><option value="gated">Gated only</option></select>
 <select id="fm" aria-label="MCP"><option value="">Any MCP</option><option>official</option><option>community</option><option>none found</option></select>
-<select id="fk" aria-label="In Composio catalog"><option value="">In Composio: any</option><option value="yes">yes</option><option value="MCP only">MCP only</option><option value="no">no</option></select>
-<button class="btn" id="copy" type="button">Copy dataset as JSON</button>
-<span class="count" id="count"></span>
-</div>
-<div class="tablewrap"><table id="t">
-<thead><tr><th class="num" data-k="0">#</th><th data-k="1">App</th><th class="hide-s" data-k="2">Category</th><th data-k="3">Auth</th><th data-k="4">Access</th><th class="hide-s" data-k="5">API</th><th data-k="6">MCP</th><th data-k="7">Verdict</th><th data-k="8">Blocker</th><th class="hide-s" data-k="9">In Composio</th><th class="num" data-k="10">Evidence</th></tr></thead>
+<select id="fk" aria-label="In Composio"><option value="">In Composio: any</option><option value="yes">Already in Composio</option><option value="MCP only">MCP wrapper only</option><option value="no">Not in Composio</option></select>
+<button class="btn" id="copy" type="button">Copy as JSON</button>
+<span class="count" id="count" aria-live="polite"></span>
+</div></div>
+<div class="ftable"><table id="t">
+<thead><tr><th class="num" data-k="0">#</th><th data-k="1">App</th><th data-k="2">Auth</th><th data-k="3">Credentials</th><th data-k="4">API</th><th data-k="5">MCP</th><th data-k="6">Verdict</th><th class="hide-s" data-k="7">In Composio</th><th class="num" data-k="8">Sources</th></tr></thead>
 <tbody>$table_rows</tbody></table></div>
-<p class="mut" style="font-size:12.5px">Columns follow <a href="${blob}spec/rubric.md">spec/rubric.md</a>, a closed set for every field, so a row can be scored right or wrong. Access is how a developer gets working credentials. Verdict is whether a toolkit can be built and tested today.</p>
-</section>
+<p class="caption">Each field uses a closed set of values defined in <a href="${blob}spec/rubric.md">spec/rubric.md</a>, so every answer can be scored right or wrong. "Credentials" means how a developer gets working credentials: open, free, trial, paid, approval or partner. Click a column header to sort.</p>
+</div></section>
 
-<section class="wrap" id="agent">
-<h2><span class="n">3</span>The agent: what it does, and where a human was needed</h2>
-<p class="sub-h">A research loop: draft, check, read the docs, fix, audit. Each stage catches a different kind of error, and every change is logged with its reason and source.</p>
-<div class="flow">
-<div class="step"><span class="k">Pass 1</span><b>Draft</b><p>Model-only first answer for all 100 apps from the hint and its own knowledge. Cheap and fast, and frozen as a baseline.</p><div class="out">100 rows</div></div>
-<div class="step"><span class="k">Loop A</span><b>Rule checks</b><p>11 consistency rules (e.g. a partner-gated app can't be "ready"; evidence must sit on the vendor's domain).</p><div class="out">code: verify/validate.py</div></div>
-<div class="step"><span class="k">Loop A2</span><b>Independent sources</b><p>Composio's own catalog (auth per toolkit) and the official MCP Registry (domain-verified publishers) flag disagreements.</p><div class="out">2 sources, 1,841 toolkits</div></div>
-<div class="step"><span class="k">Loop B</span><b>Ground in docs</b><p>Open the vendor's auth, pricing and MCP pages for every app. Correct each claim that the page contradicts.</p><div class="out">$loopB changes, $loopB_apps apps</div></div>
-<div class="step human"><span class="k">Loop C &middot; browser + human</span><b>Audit</b><p>Seeded sample plus every flagged row, read in a real browser. Misses become new rules that are applied to all 100 rows.</p><div class="out">$loopC changes, $loopC_apps apps, 3 new rules</div></div>
-<div class="step"><span class="k">Holdout</span><b>Fresh check</b><p>8 rows that no loop touched, checked after everything else was frozen.</p><div class="out">$bfh/$bt fields right</div></div>
-</div>
-<div class="grid2">
-<div class="card"><h3>Where a human (or a real browser) was needed</h3><ul class="tight">$human</ul></div>
-<div class="card"><h3>What the agent code enforces</h3><ul class="tight">
-<li><b>Evidence must be a page the agent opened.</b> A submission that cites a URL it never fetched is rejected and sent back (tested in <code>tests/</code>).</li>
-<li><b>Closed answer sets.</b> The output schema is the rubric, so there is no free text for auth, access or verdict.</li>
-<li><b>Self-repair, then escalate.</b> A rule violation gets two repair attempts. After that the row is saved as low confidence and routed to a human.</li>
-<li><b>Composio-native tools.</b> Web search and page reading come from Composio tools (<code>TAVILY_SEARCH</code>, <code>TAVILY_EXTRACT</code>, <code>FIRECRAWL_SCRAPE</code>) through the Composio SDK, with Claude as the model.</li>
-</ul>
-<div class="honest" style="margin-top:12px"><b>How this run was produced.</b> For this submission, Claude acted as the research agent. It used web search, page fetch and a real browser pane, with the rubric, validators and scorers in this repo as its checks. <code>agent/research.py</code> packages the same loop as a headless pipeline on Composio's SDK. The pipeline is unit-tested offline with a scripted model. It needs <code>COMPOSIO_API_KEY</code> and <code>ANTHROPIC_API_KEY</code> to run live.</div>
-</div>
-</div>
-</section>
-
-<section class="wrap" id="verification">
-<h2><span class="n">4</span>Verification: how we know the table is right</h2>
-<p class="sub-h">Gold labels came from reading each vendor's own pages in a real browser, a different method from the fetch-and-summarise step the loops used. The audit sample is seeded (seed $seed, 2 apps per category), so anyone can redraw it.</p>
-<div class="grid2">
-<div class="card"><h3>Accuracy by pass (field-level)</h3>
-<div class="acc-chart">
-<div class="ac-row"><span><b>Audit sample</b><br><span class="mut">$ar apps &middot; $at fields</span></span><div class="ac-bars">
-<div class="ac-b"><span class="t"><span class="f f1" style="width:$a1w%;display:block"></span></span><b>$a1</b></div>
-<div class="ac-b"><span class="t"><span class="f f2" style="width:$a2w%;display:block"></span></span><b>$a2</b></div>
-<div class="ac-b"><span class="t"><span class="f f3" style="width:$afw%;display:block"></span></span><b>$af</b></div></div></div>
-<div class="ac-row"><span><b>Post-loop holdout</b><br><span class="mut">$br apps &middot; $bt fields</span></span><div class="ac-bars">
-<div class="ac-b"><span class="t"><span class="f f1" style="width:$b1w%;display:block"></span></span><b>$b1</b></div>
-<div class="ac-b"><span class="t"><span class="f f2" style="width:$b2w%;display:block"></span></span><b>$b2</b></div>
-<div class="ac-b"><span class="t"><span class="f f3" style="width:$bfw%;display:block"></span></span><b>$bf</b></div></div></div>
-</div>
-<div class="legend"><span><i style="background:#94a3b8"></i>Pass 1 (memory)</span><span><i style="background:#818cf8"></i>Pass 2 (rules + grounding)</span><span><i style="background:var(--acc)"></i>Final</span></div>
-<p style="font-size:13.5px;margin:12px 0 0">Fully correct rows on the audit sample: <b>$a1r/$ar &rarr; $a2r/$ar &rarr; $afr/$ar</b>. Read the final audit bar carefully: it is 100% <i>because</i> the audit's misses were fixed, so it is not an accuracy estimate. The honest estimate is the <b>holdout</b>, 8 rows checked after all fixes were frozen, at $bfh/$bt fields. With n this small, that still allows a true accuracy as low as about $bflow (95% lower bound).</p>
-</div>
-<div class="card"><h3>Per field, audit sample</h3>
-<table><thead><tr><th>Field</th><th class="num">Pass 1</th><th class="num">Pass 2</th><th class="num">Final</th></tr></thead><tbody>$per_field</tbody></table>
-<p class="mut" style="font-size:12.5px;margin:10px 0 0">Auth is scored by family (OAuth2 / static key or token / Basic / other / none), because "API key" versus "token" is only vendor wording. The stricter wording match was 90% in pass 1 and 100% from pass 2 on. MCP is scored as official versus not.</p>
-</div>
-</div>
-<div class="card" style="margin-top:16px"><h3>Every pass-1 miss on the audit sample, and which loop caught it</h3>
-<div class="tablewrap" style="max-height:none;border:none"><table><thead><tr><th>App</th><th>Field</th><th>Pass 1 said</th><th>Docs say</th><th>Caught by</th></tr></thead><tbody>$miss_table</tbody></table></div>
-<p class="mut" style="font-size:12.5px;margin:10px 0 0">Loop B also made one row worse before the audit fixed it: Waterfall.io moved from "trial, ready" to "partner, blocked", then to the correct "approval, friction". Loops can regress, and that is why the audit exists.</p>
-</div>
-<div class="grid2" style="margin-top:16px">
-<div class="card"><h3>Rules the audit added, applied to all 100 rows</h3><ul class="tight">
-<li><b>A free plan is not a free API.</b> Read the plan table's API row. This changed Help Scout, Freshdesk and Smartsheet to trial.</li>
-<li><b>A docs-search MCP is not an official MCP.</b> It cannot act on the account. This changed Twilio; Mailchimp and Vonage were already right.</li>
-<li><b>If OAuth exists but isn't primary, say why.</b> Rule 11 in the validator. This changed Netlify, Vercel, Supabase and Sentry to OAuth, and 17 apps now carry a written reason.</li>
+<section id="agent"><div class="wrap">
+<div class="sec-k">3 &middot; The agent</div>
+<h2>How the research ran, and where a human stepped in</h2>
+<p class="sec-sub">A research loop: draft, check, read the docs, fix, audit. Each stage catches a different kind of mistake, and every change is logged with its reason and source.</p>
+<ol class="tl">
+<li><div class="dot">1</div><div><h3>Draft from memory</h3><p>The model answers all 100 apps from the hint and what it already knows. Fast and cheap, then frozen as the baseline to measure against.</p></div><div class="res"><span>Output</span>100 draft rows</div></li>
+<li><div class="dot">2</div><div><h3>Check the rules</h3><p>11 consistency rules catch contradictions. A partner-gated app can't be "ready", evidence must sit on the vendor's own domain, and when OAuth exists but isn't primary, the row must say why.</p></div><div class="res"><span>Code</span>verify/validate.py</div></li>
+<li><div class="dot">3</div><div><h3>Cross-check two independent sources</h3><p>Composio's own catalog (which auth each existing toolkit uses) and the official MCP Registry, where publishers prove they own the domain. Any disagreement flags the row for reading.</p></div><div class="res"><span>Sources</span>1,841 toolkits + MCP Registry</div></li>
+<li><div class="dot">4</div><div><h3>Read the vendor's docs</h3><p>For every app, open the auth, pricing and MCP pages and correct any claim the page contradicts.</p></div><div class="res"><span>Changed</span>$loopB fields in $loopB_apps apps</div></li>
+<li class="h"><div class="dot">5</div><div><h3>Audit in a real browser</h3><p>A seeded sample of 2 apps per category, plus every flagged row, read in a real browser. Each miss becomes a new rule, applied to all 100 rows.</p></div><div class="res"><span>Changed</span>$loopC fields in $loopC_apps apps &middot; 3 new rules</div></li>
+<li><div class="dot">6</div><div><h3>Fresh holdout</h3><p>8 apps no loop had touched, checked only after everything else was frozen. This is the honest accuracy estimate.</p></div><div class="res"><span>Result</span>$bfh / $bt fields correct</div></li>
+</ol>
+<div class="grid2" style="margin-top:30px">
+<div class="card"><h3>Where a human or a real browser was needed</h3><ul class="clean">$human</ul></div>
+<div class="card"><h3>What the agent code enforces</h3><ul class="clean">
+<li><b>Evidence must be a page the agent opened.</b> A submission citing a URL it never fetched is rejected and sent back for repair.</li>
+<li><b>Closed answer sets.</b> The output schema is the rubric, so auth, access and verdict can't be free text.</li>
+<li><b>Repair, then escalate.</b> A rule violation gets two repair attempts. After that the row is saved as low-confidence and routed to a human.</li>
+<li><b>Composio-native tools.</b> Search and page reading run through the Composio SDK (<code>TAVILY_SEARCH</code>, <code>TAVILY_EXTRACT</code>, <code>FIRECRAWL_SCRAPE</code>), with Claude as the model.</li>
 </ul></div>
-<div class="card"><h3>Pass-1 misses on the holdout (all fixed by loops A&ndash;B before the holdout was checked)</h3>
-<table><thead><tr><th>App</th><th>Field</th><th>Pass 1 said</th><th>Docs say</th></tr></thead><tbody>$b_misses_p1</tbody></table>
-<p class="mut" style="font-size:12.5px;margin:10px 0 0">Across both samples, accuracy went from $comb1 in pass 1 to $comb2 after the automated loops, before any audit fix.</p></div>
 </div>
-</section>
+<div class="honest"><b>How this run was produced.</b> For this submission, Claude acted as the research agent. It used web search, page fetch and a real browser, with this repo's rubric, rule checks and scorers. <code>agent/research.py</code> packages the same loop as a headless pipeline on Composio's SDK. It's unit-tested offline with a scripted model and needs a Composio key and an Anthropic key to run live.</div>
+</div></section>
 
-<section class="wrap" id="run">
-<h2><span class="n">5</span>Proof: run it yourself</h2>
-<p class="sub-h">The repo holds the agent, the verifiers, the data from every pass, and a GitHub Action you can trigger from the Actions tab.</p>
+<section id="verification"><div class="wrap">
+<div class="sec-k">4 &middot; Verification</div>
+<h2>How we know the table is right</h2>
+<p class="sec-sub">Gold labels came from reading each vendor's own pages in a real browser, a different method from the fetch-and-summarise step the loops used. The sample is seeded (seed $seed), so anyone can redraw it.</p>
+<div class="prog">
+<div><div class="v">$a1</div><div class="l">Pass 1: memory only</div><p>Audit sample, $ar apps, $at fields. Fully correct rows: $a1r of $ar.</p></div>
+<div><div class="v">$a2</div><div class="l">After automated loops</div><p>Rules, cross-checks and doc reading, before any audit fix. Rows: $a2r of $ar.</p></div>
+<div><div class="v">$af</div><div class="l">After the audit</div><p>The audit's misses were fixed, so this is <i>not</i> an accuracy estimate.</p></div>
+<div class="final"><div class="v">$bfh/$bt</div><div class="l">Fresh holdout</div><p>$br untouched apps checked after the freeze. The honest number. 95% lower bound: $bflow.</p></div>
+</div>
 <div class="grid2">
-<div class="card"><h3>Verify everything offline (no keys needed)</h3>
-<pre>git clone $repo
-cd composio-app-research
-pip install -r requirements.txt
-python -m pytest -q                 # 8 tests, incl. the agent loop
-python -m verify.validate final     # 11 rules on all 100 rows
-python -m verify.score              # reproduces every accuracy number
-python page/build.py                # rebuilds this page from data/</pre></div>
-<div class="card"><h3>Run the research agent live (Composio + Claude)</h3>
-<pre>export COMPOSIO_API_KEY=...  ANTHROPIC_API_KEY=...
-# connect Tavily and/or Firecrawl for your user in Composio
-python -m agent.run --only 41 --user-id me      # one app
-python -m agent.run --ids 1-100 --out agent_run # the full list
-python -m verify.score agent_run                # grade it vs gold</pre>
-<p style="margin:10px 0 0"><a class="btn pri" href="$repo/actions/workflows/research.yml">Runnable trigger: GitHub Action "Research one app"</a> <a class="btn" href="$repo/actions/workflows/verify.yml">CI: verify data</a></p></div>
+<div class="card"><h3>Accuracy by pass</h3>
+<div class="acc-row"><div><b>Audit sample</b><div class="sub">$ar apps &middot; $at fields</div></div><div>
+<div class="acc-b"><span class="t"><span class="f f1" style="width:$a1w%"></span></span><b>$a1</b></div>
+<div class="acc-b"><span class="t"><span class="f f2" style="width:$a2w%"></span></span><b>$a2</b></div>
+<div class="acc-b"><span class="t"><span class="f f3" style="width:$afw%"></span></span><b>$af</b></div></div></div>
+<div class="acc-row"><div><b>Fresh holdout</b><div class="sub">$br apps &middot; $bt fields</div></div><div>
+<div class="acc-b"><span class="t"><span class="f f1" style="width:$b1w%"></span></span><b>$b1</b></div>
+<div class="acc-b"><span class="t"><span class="f f2" style="width:$b2w%"></span></span><b>$b2</b></div>
+<div class="acc-b"><span class="t"><span class="f f3" style="width:$bfw%"></span></span><b>$bf</b></div></div></div>
+<div class="legend-row"><span class="legend"><i class="f1"></i>Pass 1</span><span class="legend"><i class="f2"></i>After loops</span><span class="legend"><i class="f3"></i>Final</span></div>
+<p class="caption">Across both samples: $comb1 in pass 1, $comb2 after the automated loops.</p></div>
+<div class="card"><h3>Accuracy per field (audit sample)</h3>
+<div class="tscroll"><table><thead><tr><th>Field</th><th class="num">Pass 1</th><th class="num">After loops</th><th class="num">Final</th></tr></thead><tbody>$per_field</tbody></table></div>
+<p class="caption">Auth is scored by family (OAuth2, key/token, Basic, other, none); "API key" versus "token" is just vendor wording. MCP is scored as official or not.</p></div>
 </div>
-</section>
+<div class="card" style="margin-top:24px"><h3>Every first-pass miss in the audit sample, and what caught it</h3>
+<div class="tscroll"><table><thead><tr><th>App</th><th>Field</th><th>Pass 1 said</th><th>The docs say</th><th>Caught by</th></tr></thead><tbody>$miss_table</tbody></table></div>
+<p class="caption">Loops can also make things worse. Loop B moved Waterfall.io from "trial, ready" to "partner, blocked". The audit then set it to the correct "approval, friction". That's why the audit exists.</p></div>
+<div class="grid2" style="margin-top:24px">
+<div class="card"><h3>Rules the audit added, applied to all 100 rows</h3><ul class="clean">
+<li><b>A free plan is not a free API.</b> Read the plan table's API row. This changed Help Scout, Freshdesk and Smartsheet to trial.</li>
+<li><b>A docs-search MCP is not an official MCP.</b> It can't act on the account. This changed Twilio.</li>
+<li><b>If OAuth exists but isn't primary, say why.</b> This moved Netlify, Vercel, Supabase and Sentry to OAuth, and 17 apps now carry a written reason.</li>
+</ul></div>
+<div class="card"><h3>First-pass misses in the holdout</h3>
+<div class="tscroll"><table><thead><tr><th>App</th><th>Field</th><th>Pass 1</th><th>Docs</th></tr></thead><tbody>$b_misses_p1</tbody></table></div>
+<p class="caption">The automated loops fixed all of these before anyone looked at the holdout.</p></div>
+</div>
+</div></section>
 
-<section class="wrap" id="limits">
-<h2><span class="n">6</span>What defeated the agent, and other limits</h2>
-<div class="card"><ul class="tight">$defeated</ul></div>
-<p class="mut" style="font-size:13px">Audit sample: $a_ids. Holdout: $b_ids.</p>
-</section>
+<section id="run"><div class="wrap">
+<div class="sec-k">5 &middot; Proof</div>
+<h2>Run it yourself</h2>
+<p class="sec-sub">The repo holds the agent, the checks, the data from every pass, and a GitHub Action you can trigger.</p>
+<div class="grid2">
+<div class="card"><h3>Run the research agent</h3>
+<pre>pip install -r requirements.txt
+export COMPOSIO_API_KEY=...  ANTHROPIC_API_KEY=...
+# connect Tavily or Firecrawl in Composio first
+python -m agent.run --only 41          # one app
+python -m agent.run --ids 1-100        # all 100
+python -m verify.score agent_run       # grade it</pre>
+<div class="links"><a class="btn pri" href="$repo/actions/workflows/research.yml">Trigger: "Research one app"</a><a class="btn" href="$repo#readme">README</a></div></div>
+<div class="card"><h3>Check everything offline, no keys</h3>
+<pre>python -m pytest -q              # 8 tests
+python -m verify.validate final  # 11 rules
+python -m verify.score           # every number
+python page/build.py             # rebuild page</pre>
+<div class="links"><a class="btn" href="$repo/actions/workflows/verify.yml">CI: verify data</a><a class="btn" href="${blob}data/changelog.jsonl">Every correction</a></div></div>
+</div>
+</div></section>
 
-<footer><div class="wrap">Built by Piyush Samdariya for Composio's AI Product Ops Intern take-home &middot; data as of 23 Nov 2026 &middot; <a href="$repo">source</a> &middot; Machine-readable: <code>&lt;script id="dataset" type="application/json"&gt;</code> on this page, plus <a href="${blob}docs/results.json">results.json</a> and <a href="${blob}docs/llms.txt">llms.txt</a>.</div></footer>
+<section id="limits"><div class="wrap">
+<div class="sec-k">6 &middot; Honest limits</div>
+<h2>What defeated the agent</h2>
+<div class="card"><ul class="clean">$defeated</ul></div>
+<p class="caption">Audit sample: $a_ids.<br>Holdout: $b_ids.</p>
+</div></section>
+
+<footer><div class="wrap">Built by Piyush Samdariya for Composio's AI Product Ops Intern take-home. Data as of 23 Nov 2026. <a href="$repo">Source</a> &middot; for agents: <code>&lt;script id="dataset"&gt;</code> on this page, <a href="${blob}docs/results.json">results.json</a>, <a href="${blob}docs/llms.txt">llms.txt</a>.</div></footer>
 
 <script type="application/json" id="dataset">$dataset</script>
 <script>
 (function(){
   var rows=[].slice.call(document.querySelectorAll('#t tbody tr.row'));
-  var q=document.getElementById('q'),fc=document.getElementById('fc'),fv=document.getElementById('fv'),fa=document.getElementById('fa'),fm=document.getElementById('fm'),fk=document.getElementById('fk'),cnt=document.getElementById('count');
-  function apply(){var s=q.value.trim().toLowerCase(),n=0;rows.forEach(function(r){var ok=(!s||r.dataset.text.indexOf(s)>-1)&&(!fc.value||r.dataset.cat===fc.value)&&(!fv.value||r.dataset.verdict===fv.value)&&(!fa.value||r.dataset.access===fa.value)&&(!fm.value||r.dataset.mcp===fm.value)&&(!fk.value||r.dataset.catalog===fk.value);r.hidden=!ok;var d=r.nextElementSibling;if(!ok&&d)d.hidden=true;if(ok)n++;});cnt.textContent=n+' of '+rows.length+' apps';}
-  [q,fc,fv,fa,fm,fk].forEach(function(el){el.addEventListener('input',apply);});apply();
+  var q=document.getElementById('q'),fv=document.getElementById('fv'),fs=document.getElementById('fs'),fm=document.getElementById('fm'),fk=document.getElementById('fk'),cnt=document.getElementById('count');
+  var pills=[].slice.call(document.querySelectorAll('#pills .pill')),cat='';
+  function apply(){var s=q.value.trim().toLowerCase(),n=0;rows.forEach(function(r){var d=r.dataset;var ok=(!s||d.text.indexOf(s)>-1)&&(!cat||d.cat===cat)&&(!fv.value||d.verdict===fv.value)&&(!fs.value||d.ss===fs.value)&&(!fm.value||d.mcp===fm.value)&&(!fk.value||d.catalog===fk.value);r.hidden=!ok;if(!ok){r.nextElementSibling.hidden=true;r.querySelector('button.exp').setAttribute('aria-expanded','false');}if(ok)n++;});cnt.textContent=n+' of '+rows.length+' apps';}
+  pills.forEach(function(p){p.addEventListener('click',function(){cat=p.dataset.cat;pills.forEach(function(x){x.setAttribute('aria-pressed',x===p?'true':'false');});apply();});});
+  [q,fv,fs,fm,fk].forEach(function(el){el.addEventListener('input',apply);});apply();
   function toggle(r,open){var d=r.nextElementSibling,b=r.querySelector('button.exp');var o=open===undefined?d.hidden:open;d.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');}
-  rows.forEach(function(r){r.querySelector('button.exp').addEventListener('click',function(){toggle(r);});var ev=r.querySelector('a.evc');ev.addEventListener('click',function(e){e.preventDefault();toggle(r,true);r.nextElementSibling.scrollIntoView({block:'nearest'});});});
+  rows.forEach(function(r){r.querySelector('button.exp').addEventListener('click',function(){toggle(r);});r.querySelector('a.evc').addEventListener('click',function(e){e.preventDefault();toggle(r,true);});});
   var tb=document.querySelector('#t tbody'),dir={};
   [].forEach.call(document.querySelectorAll('#t thead th'),function(th){th.addEventListener('click',function(){var k=+th.dataset.k;dir[k]=!dir[k];var pairs=rows.map(function(r){return [r,r.nextElementSibling];});pairs.sort(function(a,b){var x=a[0].children[k].innerText.trim(),y=b[0].children[k].innerText.trim();var nx=parseFloat(x),ny=parseFloat(y);var c=(!isNaN(nx)&&!isNaN(ny))?nx-ny:x.localeCompare(y);return dir[k]?c:-c;});pairs.forEach(function(p){tb.appendChild(p[0]);tb.appendChild(p[1]);});});});
-  document.getElementById('copy').addEventListener('click',function(){var t=document.getElementById('dataset').textContent;var b=this;try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied '+JSON.parse(t).length+' rows';},function(){b.textContent='Copy blocked by browser';});}catch(e){b.textContent='Copy blocked by browser';}});
+  document.getElementById('copy').addEventListener('click',function(){var t=document.getElementById('dataset').textContent,b=this;try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied '+JSON.parse(t).length+' rows';},function(){b.textContent='Copy blocked';});}catch(e){b.textContent='Copy blocked';}});
   function openHash(){var h=location.hash.slice(1);if(/^d\d+$$/.test(h)){var d=document.getElementById(h);if(d){var r=d.previousElementSibling;r.hidden=false;toggle(r,true);d.scrollIntoView({block:'center'});}}}
   window.addEventListener('hashchange',openHash);openHash();
 })();

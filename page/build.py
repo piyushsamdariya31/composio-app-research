@@ -30,6 +30,11 @@ FAM = {"OAuth2": "OAuth2", "API key": "Static key/token", "Token": "Static key/t
 E = html.escape
 
 
+def re_tags(x: str) -> str:
+    import re
+    return re.sub(r"<[^>]+>", "", x)
+
+
 def wilson_low(k: int, n: int, z: float = 1.96) -> float:
     if n == 0:
         return 0.0
@@ -157,26 +162,36 @@ def main() -> None:
 
     table_rows = []
     for r in rows:
-        auth = " ".join(f'<b>{E(a)}</b>' if a == r["primary_auth"] else E(a) for a in r["auth"])
+        auth = "".join(f'<span class="a{" p" if a == r["primary_auth"] else ""}">{E(a)}</span>' for a in r["auth"])
         flags = []
         if r["id"] in sample_a:
-            flags.append('<span class="tag" title="In the browser-audited sample">audited</span>')
+            flags.append('<span class="tag" title="Checked by hand in a real browser">audited</span>')
         if r["id"] in sample_b:
-            flags.append('<span class="tag" title="In the post-loop holdout">holdout</span>')
+            flags.append('<span class="tag" title="Checked after all fixes were frozen">holdout</span>')
         if r["confidence"] == "low":
-            flags.append('<span class="tag bad" title="Needs a human">human</span>')
+            flags.append('<span class="tag bad" title="Low confidence: needs a human">needs human</span>')
         catl = {"toolkit exists": "yes", "MCP wrapper only": "MCP only", "not in catalog": "no"}[r["catalog"]]
+        ss = '<span class="ss ok">self-serve</span>' if r["self_serve"] == "self-serve" else '<span class="ss bad">gated</span>'
+        mcp = {"official": '<span class="m on">official</span>', "community": '<span class="m">community</span>',
+               "none found": '<span class="m off">none found</span>'}[r["mcp"]]
+        blk = "" if r["blocker"] == "none" else f'<div class="sub">{E(r["blocker"])}</div>'
         table_rows.append(
             f'<tr class="row" data-cat="{E(r["category"])}" data-verdict="{r["verdict"]}" data-access="{r["access"]}" '
-            f'data-mcp="{r["mcp"]}" data-catalog="{catl}" data-text="{E((r["name"] + " " + r["what_it_does"] + " " + r["hint"]).lower())}">'
-            f'<td class="num">{r["id"]}</td><td><button class="exp" aria-expanded="false" aria-controls="d{r["id"]}">{E(r["name"])}</button>{"".join(flags)}'
-            f'<div class="sub">{E(r["what_it_does"])}</div></td><td class="hide-s">{E(r["category"])}</td><td>{auth}</td>'
-            f'<td>{E(r["access"])}</td><td class="hide-s">{E(r["api_type"])}</td><td>{E(r["mcp"])}</td><td>{vchip(r["verdict"])}</td>'
-            f'<td>{E(r["blocker"])}</td><td class="hide-s">{catl}</td><td class="num"><a href="#d{r["id"]}" class="evc" data-open="{r["id"]}">{len(r["evidence"])}</a></td></tr>'
-            f'<tr class="det" id="d{r["id"]}" hidden><td colspan="11"><div class="detg"><div><h4>Evidence (pages the agent opened)</h4><ul class="ev">{ev_links(r)}</ul></div>'
-            f'<div><h4>What the loops changed</h4>{hist(r)}'
+            f'data-mcp="{r["mcp"]}" data-catalog="{catl}" data-ss="{r["self_serve"]}" data-text="{E((r["name"] + " " + r["what_it_does"] + " " + r["hint"] + " " + r["category"]).lower())}">'
+            f'<td class="num id">{r["id"]}</td>'
+            f'<td class="app"><button class="exp" aria-expanded="false" aria-controls="d{r["id"]}">{E(r["name"])}<span class="chev" aria-hidden="true">&#9662;</span></button>'
+            f'<div class="what">{E(r["what_it_does"])}</div><div class="catn">{E(r["category"])}{"".join(flags)}</div></td>'
+            f'<td><div class="auth">{auth}</div></td>'
+            f'<td>{ss}<div class="sub">{E(r["access"])}</div></td>'
+            f'<td>{E(r["api_type"])}<div class="sub">{E(r["api_breadth"])}</div></td>'
+            f'<td>{mcp}</td>'
+            f'<td>{vchip(r["verdict"])}{blk}</td>'
+            f'<td class="hide-s">{catl}</td>'
+            f'<td class="num"><a href="#d{r["id"]}" class="evc">{len(r["evidence"])}</a></td></tr>'
+            f'<tr class="det" id="d{r["id"]}" hidden><td colspan="9"><div class="detg"><div><h4>Sources the agent opened</h4><ul class="ev">{ev_links(r)}</ul></div>'
+            f'<div><h4>What the verification loops changed</h4>{hist(r)}'
             + (f'<h4>Why this primary auth</h4><p>{E(r["primary_reason"])}</p>' if r.get("primary_reason") else "")
-            + f'<p class="mut">Confidence: {E(r["confidence"])} &middot; API breadth: {E(r["api_breadth"])} &middot; Composio slugs: {E(", ".join(r["catalog_slugs"]) or "none")}</p></div></div></td></tr>')
+            + f'<p class="mut small">Confidence: <b>{E(r["confidence"])}</b> &middot; Composio toolkit slugs: {E(", ".join(r["catalog_slugs"]) or "none")}</p></div></div></td></tr>')
 
     def miss_rows(s):
         return "".join(f'<tr><td>{E(m["name"])}</td><td>{E(m["field"])}</td><td>{E(m["got"])}</td><td>{E(m["want"])}</td></tr>'
@@ -201,21 +216,23 @@ def main() -> None:
                | ({"primary_reason": r["primary_reason"]} if r.get("primary_reason") else {})
                | ({"notes": r["notes"]} if r.get("notes") else {}) for r in rows]
 
-    headline = [
-        f'<b>Most of the list is buildable today.</b> {verdict["ready"]} of {n} apps can become a toolkit now with credentials a developer gets alone; '
-        f'{verdict["friction"]} need a review, a paid plan or a key request first; only {verdict["blocked"]} need a deal or have no public API.',
-        f'<b>Auth is a two-lane road, not an OAuth monopoly.</b> OAuth2 is the right primary for {prim["OAuth2"]} apps and a static key or token for {prim["Static key/token"]}. '
-        f'{both} apps offer both, so a toolkit framework has to treat API keys as first-class, not as a fallback.',
-        f'<b>Gating follows the category, not the company size.</b> {", ".join(fully_open)} are 10/10 self-serve. '
-        f'Ads platforms gate on app review, fintech on account approval or partnership, AI-native apps on paid plans, ecommerce on a mix: '
-        + "; ".join(f'{d["cat"]} {d["ss"]}/10' for d in most_gated) + ".",
-        f'<b>The most common blocker is a tie: app review ({blockers["app review"]}) and paid plans ({blockers["paid plan"]}).</b> '
-        f'Partnership gates are rarer ({blockers["partnership"]}) and cluster in enterprise and fintech apps.',
-        f'<b>Easy wins vs outreach.</b> Of the {n - in_cat["toolkit exists"]} apps without a full Composio toolkit, {len(easy_api)} are ready to build now '
-        f'({", ".join(r["name"] for r in easy_api)}); {len(outreach)} need outreach or a sponsored account.',
-        f'<b>MCP is now table stakes, but "official MCP" can mean docs search.</b> {mcp_off} apps have a vendor MCP that can act on account data. '
-        f'Twilio, Mailchimp and Vonage ship MCP servers that only search their docs, and Slack’s MCP is open only to Marketplace-listed or internal apps.',
+    gated_desc = "; ".join(f'{d["cat"]} {d["ss"]}/10' for d in most_gated)
+    cards = [
+        (f'{verdict["ready"]}<small>/{n}</small>', "can be built as a toolkit today",
+         f'{verdict["friction"]} more are buildable once a review, paid plan or key request is cleared. Only {verdict["blocked"]} are blocked by a partnership or a missing public API.'),
+        ("OAuth2", "is the most common primary auth, but keys are everywhere",
+         f'OAuth2 is the best primary method for {prim["OAuth2"]} apps; a static API key or token for {prim["Static key/token"]}. '
+         f'{offers_static} apps offer a key or token and {offers_oauth} offer OAuth2. {both} offer both, so toolkits need first-class key support, not just OAuth.'),
+        (f'{selfserve}<small>/{n}</small>', "give developers credentials without asking anyone",
+         f'{" and ".join(fully_open)} are 10/10 self-serve. The gated categories: {gated_desc}. Ads platforms gate on app review, fintech on account approval or partnership, AI-native apps on paid plans.'),
+        (f'{blockers["app review"]} + {blockers["paid plan"]}', "app review and paid plans tie as the top blocker",
+         f'Partnership gates are rarer ({blockers["partnership"]}) and sit with enterprise and fintech apps: ' + ", ".join(r["name"] for r in rows if r["blocker"] == "partnership") + '.'),
+        (f'{len(easy_api)}', "easy wins: ready now and not yet a full Composio toolkit",
+         f'{", ".join(r["name"] for r in easy_api)}. Another {len(outreach)} apps missing from Composio need outreach or a sponsored account.'),
+        (f'{mcp_off}', "apps have an official MCP that acts on account data",
+         'But "official MCP" can mean docs search: Twilio, Mailchimp and Vonage ship MCP servers that only search their documentation, and Slack’s MCP is open only to Marketplace-listed or internal apps.'),
     ]
+    headline = [f"<b>{t}</b> {b}" for _, t, b in cards]  # used by llms.txt
 
     moving = [
         ("Shopify", "Admin-created custom apps (static tokens) can no longer be created; Storefront MCP was removed in favour of Shop MCP / UCP."),
@@ -279,7 +296,7 @@ def main() -> None:
     tpl = Template((Path(__file__).parent / "template.html").read_text())
     page = tpl.substitute(
         **{k: E(str(v)) for k, v in stats.items()},
-        headline="".join(f"<li>{h}</li>" for h in headline),
+        headline="".join(f'<article class="pcard"><div class="big">{a}</div><h3>{E(t)}</h3><p>{E(b)}</p></article>' for a, t, b in cards),
         cat_table=cat_table, access_bars=access_bars, prim_bars=prim_bars, blocker_bars=blocker_bars,
         easy_api=app_list(easy_api, lambda r: f'{r["access"]}, {r["primary_auth"]}' + (", MCP" if r["mcp"] == "official" else "")),
         easy_mcp=app_list(easy_mcp, lambda r: "MCP-only product"), easy_local=app_list(easy_local, lambda r: "local CLI, ship as a sandboxed skill"),
@@ -289,7 +306,7 @@ def main() -> None:
         defeated="".join(f"<li>{d}</li>" for d in defeated),
         table_rows="".join(table_rows), miss_table=miss_table, per_field=per_field,
         b_misses_p1=miss_rows(b1) or '<tr><td colspan="4">none</td></tr>',
-        cats_opts="".join(f'<option>{E(c)}</option>' for c in by_cat),
+        cats_opts="".join(f'<button type="button" class="pill" data-cat="{E(c)}">{E(c)}</button>' for c in by_cat),
         dataset=json.dumps(dataset, ensure_ascii=False).replace("</", "<\\/"),
         repo=REPO, blob=BLOB,
     )
@@ -304,7 +321,7 @@ def main() -> None:
         f"- [Dataset (CSV)]({REPO}/blob/main/docs/results.csv)\n- [Rubric]({REPO}/blob/main/spec/rubric.md)\n"
         f"- [Change log]({REPO}/blob/main/data/changelog.jsonl): every correction with reason and source\n"
         f"- [Gold labels]({REPO}/blob/main/data/gold_sample.json), [holdout]({REPO}/blob/main/data/gold_holdout_b.json)\n\n"
-        "## Headline patterns\n" + "\n".join("- " + h.replace("<b>", "").replace("</b>", "") for h in headline) + "\n")
+        "## Headline patterns\n" + "\n".join(f"- {re_tags(a)} {t}: {b}" for a, t, b in cards) + "\n")
     print(f"wrote {OUT/'index.html'} ({len(page)//1024} KB), results.json, results.csv, llms.txt")
 
 
