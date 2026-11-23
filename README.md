@@ -3,7 +3,7 @@
 An agent that researches apps for Composio toolkit buildability: auth, self-serve vs gated access,
 API surface, MCP, verdict, main blocker, and evidence URLs. It has been run on 100 apps.
 
-**Case study (live):** https://composio-app-research.vercel.app
+**Case study (live):** https://composio-app-research-zeta.vercel.app
 
 ## Run the research agent
 
