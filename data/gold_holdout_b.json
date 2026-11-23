@@ -1,0 +1,13 @@
+{
+ "_method": "Post-loop holdout B (verify/sample.py draw_holdout_b, seed 20261124): 8 rows never in sample A and never edited by audit-driven fixes. Checked in a real browser after the final pass was written. Estimates residual error in rows the loops considered clean.",
+ "labels": {
+  "1":  {"auth":["OAuth2"],"primary_auth":"OAuth2","access":"free","api_type":"REST+GraphQL","mcp_official":true,"verdict":"ready","src":["https://developer.salesforce.com/free-trials","https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html","https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide"],"note":"Developer Edition: 'Build on Salesforce for free'. Hosted MCP GA Apr 2026 (Enterprise Edition+, Flex Credits; beta in DE orgs)."},
+  "4":  {"auth":["OAuth2","API key"],"primary_auth":"OAuth2","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://attio.com/pricing"],"note":"'API and webhooks' and 'MCP server' on Free, Plus, Pro, Ultra."},
+  "14": {"auth":["OAuth2","Token"],"primary_auth":"OAuth2","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://dev.frontapp.com/docs/welcome","https://dev.frontapp.com/docs/authentication"],"note":"'free developer environment'; MCP server token scope."},
+  "21": {"auth":["OAuth2","Token"],"primary_auth":"OAuth2","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://docs.slack.dev/authentication/","https://docs.slack.dev/ai/mcp-server"],"note":"Slack MCP only for directory-published or internal apps."},
+  "56": {"auth":["API key"],"primary_auth":"API key","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://www.firecrawl.dev/pricing","https://docs.firecrawl.dev/api-reference/introduction"],"note":"Free Plan, 1,000 credits/month."},
+  "77": {"auth":["OAuth2","Token"],"primary_auth":"OAuth2","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://developer.clickup.com/docs/authentication","https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"],"note":"MCP 'available on all plans', OAuth only."},
+  "89": {"auth":["OAuth2"],"primary_auth":"OAuth2","access":"approval","api_type":"REST","mcp_official":true,"verdict":"friction","src":["https://docs.ramp.com/developer-api/v1/introduction"],"note":"'Don't have a Ramp account? Request a sandbox'; partner program for multi-business integrations; MCP/CLI for agents."},
+  "95": {"auth":["API key"],"primary_auth":"API key","access":"free","api_type":"REST","mcp_official":true,"verdict":"ready","src":["https://reducto.ai/pricing","https://docs.reducto.ai/"],"note":"$150 free usage; Reducto MCP server."}
+ }
+}

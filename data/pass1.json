@@ -1,0 +1,2660 @@
+[
+ {
+  "id": 1,
+  "name": "Salesforce",
+  "category": "CRM and Sales",
+  "hint": "salesforce.com",
+  "what_it_does": "Cloud CRM platform for sales, service and marketing",
+  "auth": [
+   "OAuth2",
+   "Other"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 2,
+  "name": "HubSpot",
+  "category": "CRM and Sales",
+  "hint": "hubspot.com",
+  "what_it_does": "CRM with marketing, sales and service hubs",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.hubspot.com/docs/api/oauth-quickstart-guide"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 3,
+  "name": "Pipedrive",
+  "category": "CRM and Sales",
+  "hint": "pipedrive.com",
+  "what_it_does": "Pipeline-focused sales CRM for small teams",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 4,
+  "name": "Attio",
+  "category": "CRM and Sales",
+  "hint": "attio.com",
+  "what_it_does": "Flexible, data-driven CRM for modern GTM teams",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.attio.com/rest-api/overview"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM and Sales",
+  "hint": "twenty.com (open-source CRM)",
+  "what_it_does": "Open-source CRM, self-hosted or cloud",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://twenty.com/developers"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 6,
+  "name": "Podio",
+  "category": "CRM and Sales",
+  "hint": "podio.com",
+  "what_it_does": "Collaborative work-management and lightweight CRM workspaces",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.podio.com/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 7,
+  "name": "Zoho CRM",
+  "category": "CRM and Sales",
+  "hint": "zoho.com/crm",
+  "what_it_does": "Zoho's CRM for sales automation and pipelines",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 8,
+  "name": "Close",
+  "category": "CRM and Sales",
+  "hint": "close.com",
+  "what_it_does": "Sales CRM with built-in calling and email",
+  "auth": [
+   "API key",
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.close.com/topics/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 9,
+  "name": "Copper",
+  "category": "CRM and Sales",
+  "hint": "copper.com",
+  "what_it_does": "CRM built for Google Workspace users",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.copper.com/introduction/authentication.html"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 10,
+  "name": "DealCloud",
+  "category": "CRM and Sales",
+  "hint": "api.docs.dealcloud.com",
+  "what_it_does": "Intapp CRM for dealmaking and capital-markets firms",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://api.docs.dealcloud.com/docs/auth"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 11,
+  "name": "Zendesk",
+  "category": "Support and Helpdesk",
+  "hint": "zendesk.com",
+  "what_it_does": "Customer service ticketing and help center suite",
+  "auth": [
+   "OAuth2",
+   "Token",
+   "Basic"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support and Helpdesk",
+  "hint": "intercom.com",
+  "what_it_does": "AI-first customer messaging and support platform",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 13,
+  "name": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "hint": "freshdesk.com",
+  "what_it_does": "Freshworks ticketing helpdesk for support teams",
+  "auth": [
+   "API key",
+   "Basic"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.freshdesk.com/api/#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 14,
+  "name": "Front",
+  "category": "Support and Helpdesk",
+  "hint": "front.com",
+  "what_it_does": "Shared inbox and customer operations platform",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://dev.frontapp.com/docs/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 15,
+  "name": "Pylon",
+  "category": "Support and Helpdesk",
+  "hint": "usepylon.com",
+  "what_it_does": "B2B support platform across Slack, email and chat",
+  "auth": [
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 16,
+  "name": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "hint": "liveagent.com",
+  "what_it_does": "Help desk with ticketing, live chat and call center",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://support.liveagent.com/061754-How-to-get-API-key"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 17,
+  "name": "Plain",
+  "category": "Support and Helpdesk",
+  "hint": "plain.com",
+  "what_it_does": "API-first B2B customer support platform",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.plain.com/docs/graphql/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 18,
+  "name": "Help Scout",
+  "category": "Support and Helpdesk",
+  "hint": "helpscout.com",
+  "what_it_does": "Shared inbox, help center and live chat",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support and Helpdesk",
+  "hint": "gorgias.com",
+  "what_it_does": "Helpdesk built for ecommerce brands",
+  "auth": [
+   "API key",
+   "Basic",
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.gorgias.com/reference/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 20,
+  "name": "Gladly",
+  "category": "Support and Helpdesk",
+  "hint": "gladly.com",
+  "what_it_does": "Customer-centric service platform for consumer brands",
+  "auth": [
+   "Token",
+   "Basic"
+  ],
+  "primary_auth": "Token",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.gladly.com/rest/#section/Getting-Started/Creating-API-Tokens"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications and Messaging",
+  "hint": "slack.com",
+  "what_it_does": "Team messaging and collaboration hub",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://api.slack.com/authentication/oauth-v2"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 22,
+  "name": "Twilio",
+  "category": "Communications and Messaging",
+  "hint": "twilio.com",
+  "what_it_does": "Programmable SMS, voice and messaging APIs",
+  "auth": [
+   "API key",
+   "Basic"
+  ],
+  "primary_auth": "Basic",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.twilio.com/docs/usage/requests-to-twilio"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 23,
+  "name": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "hint": "zoho.com/cliq",
+  "what_it_does": "Zoho's team chat and collaboration app",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.zoho.com/cliq/help/restapi/v2/#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "hint": "open.larksuite.com",
+  "what_it_does": "Enterprise super-app for chat, docs and meetings",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/access-token-overview"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 25,
+  "name": "Pumble",
+  "category": "Communications and Messaging",
+  "hint": "pumble.com",
+  "what_it_does": "Team chat app from CAKE.com",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://pumble.com/help/integrations/add-pumble-apps/pumble-api/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 26,
+  "name": "Discord",
+  "category": "Communications and Messaging",
+  "hint": "discord.com",
+  "what_it_does": "Voice, video and text community chat platform",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://discord.com/developers/docs/topics/oauth2"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 27,
+  "name": "Telegram",
+  "category": "Communications and Messaging",
+  "hint": "core.telegram.org",
+  "what_it_does": "Cloud messaging app with an open Bot API",
+  "auth": [
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://core.telegram.org/bots/api#authorizing-your-bot"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "hint": "developers.facebook.com/docs/whatsapp",
+  "what_it_does": "WhatsApp Cloud API for business messaging",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 29,
+  "name": "Aircall",
+  "category": "Communications and Messaging",
+  "hint": "aircall.io",
+  "what_it_does": "Cloud phone system for sales and support teams",
+  "auth": [
+   "OAuth2",
+   "Basic"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.aircall.io/api-references/#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 30,
+  "name": "Vonage",
+  "category": "Communications and Messaging",
+  "hint": "developer.vonage.com",
+  "what_it_does": "Communications APIs for SMS, voice and video",
+  "auth": [
+   "API key",
+   "Basic",
+   "Other"
+  ],
+  "primary_auth": "Other",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.vonage.com/en/getting-started/concepts/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 31,
+  "name": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.google.com/google-ads",
+  "what_it_does": "Google's search and display advertising platform",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 32,
+  "name": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/marketing-apis",
+  "what_it_does": "Ads across Facebook, Instagram and Messenger",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.facebook.com/docs/marketing-api/get-started/authorization"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "learn.microsoft.com/linkedin/marketing",
+  "what_it_does": "LinkedIn's B2B advertising platform",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 34,
+  "name": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "highlevel.stoplight.io",
+  "what_it_does": "All-in-one CRM and marketing platform for agencies",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://highlevel.stoplight.io/docs/integrations/a04191c0fabf9-authorization"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 35,
+  "name": "Mailchimp",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "mailchimp.com/developer",
+  "what_it_does": "Email marketing and audience automation",
+  "auth": [
+   "OAuth2",
+   "API key"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 36,
+  "name": "Klaviyo",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.klaviyo.com",
+  "what_it_does": "Email and SMS marketing for ecommerce brands",
+  "auth": [
+   "OAuth2",
+   "API key"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 37,
+  "name": "systeme.io",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "systeme.io (funnel builder)",
+  "what_it_does": "All-in-one funnel, email and course builder",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.systeme.io/reference/api"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 38,
+  "name": "Pinterest",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.pinterest.com",
+  "what_it_does": "Visual discovery and shopping platform",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 39,
+  "name": "Threads (Meta)",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/threads",
+  "what_it_does": "Meta's text-based social app",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.facebook.com/docs/threads/get-started"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 40,
+  "name": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "sendgrid.com",
+  "what_it_does": "Twilio's transactional and marketing email API",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev",
+  "what_it_does": "Commerce platform for online stores",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 42,
+  "name": "WooCommerce",
+  "category": "Ecommerce",
+  "hint": "woocommerce.com/document/woocommerce-rest-api",
+  "what_it_does": "Open-source ecommerce plugin for WordPress",
+  "auth": [
+   "API key",
+   "Basic",
+   "Other"
+  ],
+  "primary_auth": "API key",
+  "access": "open",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com",
+  "what_it_does": "SaaS ecommerce platform for mid-market brands",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "trial",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.bigcommerce.com/docs/start/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "hint": "developer.salesforce.com/docs/commerce",
+  "what_it_does": "Salesforce's enterprise B2C commerce platform",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "hint": "developer.adobe.com/commerce",
+  "what_it_does": "Enterprise ecommerce platform, open-source core",
+  "auth": [
+   "Other",
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "open",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 46,
+  "name": "Squarespace",
+  "category": "Ecommerce",
+  "hint": "developers.squarespace.com",
+  "what_it_does": "Website builder with ecommerce",
+  "auth": [
+   "OAuth2",
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 47,
+  "name": "Ecwid",
+  "category": "Ecommerce",
+  "hint": "api-docs.ecwid.com",
+  "what_it_does": "Ecommerce store builder that embeds anywhere",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://api-docs.ecwid.com/docs/get-access-token"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 48,
+  "name": "Gumroad",
+  "category": "Ecommerce",
+  "hint": "gumroad.com/api",
+  "what_it_does": "Sell digital products and memberships directly",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://gumroad.com/api#api-authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api",
+  "what_it_does": "Amazon marketplace seller APIs",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com",
+  "what_it_does": "Creator monetization and payments platform",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://fanbasis.com"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.dataforseo.com",
+  "what_it_does": "SEO data APIs: SERP, keywords, backlinks",
+  "auth": [
+   "Basic"
+  ],
+  "primary_auth": "Basic",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.dataforseo.com/v3/auth/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 52,
+  "name": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "hint": "seranking.com/api",
+  "what_it_does": "SEO platform for rank tracking and audits",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://seranking.com/api/data/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 53,
+  "name": "Ahrefs",
+  "category": "Data, SEO and Scraping",
+  "hint": "ahrefs.com/api",
+  "what_it_does": "SEO toolset for backlinks and keywords",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.ahrefs.com/docs/api/reference/introduction"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.mrscraper.com",
+  "what_it_does": "AI-powered web scraping API",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.mrscraper.com"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 55,
+  "name": "Apify",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.apify.com",
+  "what_it_does": "Platform to run web scrapers (Actors) at scale",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.apify.com/api/v2#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 56,
+  "name": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "hint": "firecrawl.dev",
+  "what_it_does": "Turns websites into LLM-ready markdown and data",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "hint": "brightdata.com",
+  "what_it_does": "Web data platform: proxies, scrapers and datasets",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.brightdata.com/api-reference/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 58,
+  "name": "Sherlock",
+  "category": "Data, SEO and Scraping",
+  "hint": "github.com/sherlock-project/sherlock",
+  "what_it_does": "Open-source CLI to find usernames across sites",
+  "auth": [
+   "None"
+  ],
+  "primary_auth": "None",
+  "access": "open",
+  "api_type": "CLI/Library",
+  "api_breadth": "narrow",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "local only",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://github.com/sherlock-project/sherlock"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "hint": "waterfall.io (contact/company intel)",
+  "what_it_does": "Contact and company data enrichment API",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://waterfall.io"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 60,
+  "name": "Clay",
+  "category": "Data, SEO and Scraping",
+  "hint": "clay.com",
+  "what_it_does": "GTM data enrichment and workflow platform",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.clay.com/university/guide/http-api-integration"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.github.com/rest",
+  "what_it_does": "Code hosting and collaboration platform",
+  "auth": [
+   "OAuth2",
+   "Token",
+   "Other"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 62,
+  "name": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "vercel.com/docs/rest-api",
+  "what_it_does": "Frontend cloud for deploying web apps",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://vercel.com/docs/rest-api#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 63,
+  "name": "Netlify",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.netlify.com/api",
+  "what_it_does": "Web hosting and deployment platform",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.netlify.com/api/get-started/#authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "developers.cloudflare.com/api",
+  "what_it_does": "CDN, security and edge compute platform",
+  "auth": [
+   "Token",
+   "API key"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST+GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 65,
+  "name": "Supabase",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "supabase.com/docs",
+  "what_it_does": "Postgres backend-as-a-service",
+  "auth": [
+   "Token",
+   "OAuth2",
+   "API key"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://supabase.com/docs/reference/api/introduction"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 66,
+  "name": "Neo4j",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "neo4j.com/docs/api",
+  "what_it_does": "Graph database and AuraDB cloud service",
+  "auth": [
+   "OAuth2",
+   "Basic"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://neo4j.com/docs/aura/platform/api/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.snowflake.com",
+  "what_it_does": "Cloud data warehouse and AI data cloud",
+  "auth": [
+   "Other",
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "Other",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "mongodb.com/docs/atlas/api",
+  "what_it_does": "Managed MongoDB cloud database service",
+  "auth": [
+   "API key",
+   "OAuth2"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://www.mongodb.com/docs/atlas/configure-api-access/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 69,
+  "name": "Datadog",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.datadoghq.com/api",
+  "what_it_does": "Monitoring and observability platform",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "trial",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.datadoghq.com/api/latest/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 70,
+  "name": "Sentry",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.sentry.io/api",
+  "what_it_does": "Error tracking and performance monitoring",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.sentry.io/api/auth/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 71,
+  "name": "Notion",
+  "category": "Productivity and Project Management",
+  "hint": "developers.notion.com",
+  "what_it_does": "Connected workspace for docs, wikis and databases",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.notion.com/docs/authorization"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 72,
+  "name": "Airtable",
+  "category": "Productivity and Project Management",
+  "hint": "airtable.com/developers",
+  "what_it_does": "Spreadsheet-database hybrid for building apps",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://airtable.com/developers/web/api/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity and Project Management",
+  "hint": "developers.linear.app",
+  "what_it_does": "Issue tracking for software teams",
+  "auth": [
+   "OAuth2",
+   "API key"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://linear.app/developers/oauth-2-0-authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 74,
+  "name": "Jira",
+  "category": "Productivity and Project Management",
+  "hint": "developer.atlassian.com",
+  "what_it_does": "Atlassian issue and project tracking",
+  "auth": [
+   "OAuth2",
+   "Token",
+   "Basic"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 75,
+  "name": "Asana",
+  "category": "Productivity and Project Management",
+  "hint": "developers.asana.com",
+  "what_it_does": "Work management for teams and projects",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.asana.com/docs/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 76,
+  "name": "Monday.com",
+  "category": "Productivity and Project Management",
+  "hint": "developer.monday.com",
+  "what_it_does": "Work OS for projects, CRM and workflows",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "GraphQL",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.monday.com/api-reference/docs/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 77,
+  "name": "ClickUp",
+  "category": "Productivity and Project Management",
+  "hint": "clickup.com/api",
+  "what_it_does": "All-in-one productivity and project management",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.clickup.com/docs/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 78,
+  "name": "Coda",
+  "category": "Productivity and Project Management",
+  "hint": "coda.io/developers",
+  "what_it_does": "Docs that work like apps",
+  "auth": [
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://coda.io/developers/apis/v1#section/Authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 79,
+  "name": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "hint": "smartsheet.com/developers",
+  "what_it_does": "Spreadsheet-style work management platform",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 80,
+  "name": "Harvest",
+  "category": "Productivity and Project Management",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+  "what_it_does": "Time tracking and invoicing",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance and Fintech",
+  "hint": "stripe.com/docs/api",
+  "what_it_does": "Online payments infrastructure",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.stripe.com/api/authentication"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 82,
+  "name": "Plaid",
+  "category": "Finance and Fintech",
+  "hint": "plaid.com/docs",
+  "what_it_does": "Connects apps to users' bank accounts",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://plaid.com/docs/api/#api-access"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 83,
+  "name": "Binance",
+  "category": "Finance and Fintech",
+  "hint": "binance-docs.github.io",
+  "what_it_does": "Cryptocurrency exchange trading APIs",
+  "auth": [
+   "API key",
+   "Other"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "hint": "paygent (NMI-powered)",
+  "what_it_does": "NMI-powered payment gateway for merchants",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "partner",
+  "api_type": "RPC/Other",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://secure.nmi.com/merchants/resources/integration/integration_portal.php"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 85,
+  "name": "iPayX",
+  "category": "Finance and Fintech",
+  "hint": "ipayx.ai/docs",
+  "what_it_does": "AI-powered payments platform",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://ipayx.ai/docs"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 86,
+  "name": "QuickBooks",
+  "category": "Finance and Fintech",
+  "hint": "developer.intuit.com",
+  "what_it_does": "Small-business accounting software",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance and Fintech",
+  "hint": "developer.xero.com",
+  "what_it_does": "Cloud accounting for small businesses",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.xero.com/documentation/guides/oauth2/overview"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 88,
+  "name": "Brex",
+  "category": "Finance and Fintech",
+  "hint": "developer.brex.com",
+  "what_it_does": "Corporate cards and spend management",
+  "auth": [
+   "OAuth2",
+   "Token"
+  ],
+  "primary_auth": "Token",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developer.brex.com/docs/authentication/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 89,
+  "name": "Ramp",
+  "category": "Finance and Fintech",
+  "hint": "docs.ramp.com",
+  "what_it_does": "Corporate cards and finance automation",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "approval",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "app review",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.ramp.com/developer-api/v1/authorization"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 90,
+  "name": "PitchBook",
+  "category": "Finance and Fintech",
+  "hint": "pitchbook.com (research API)",
+  "what_it_does": "Private capital markets data and research",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "partner",
+  "api_type": "REST",
+  "api_breadth": "broad",
+  "mcp": "none found",
+  "verdict": "blocked",
+  "blocker": "partnership",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://pitchbook.com/data/api"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "what_it_does": "Google's AI research notebook (Enterprise API)",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 92,
+  "name": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "hint": "help.otter.ai (MCP server)",
+  "what_it_does": "AI meeting transcription and notes",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "MCP only",
+  "api_breadth": "narrow",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://help.otter.ai/hc/en-us/articles/35287607466647"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 93,
+  "name": "Fathom",
+  "category": "AI, Research and Media-native",
+  "hint": "fathom.video",
+  "what_it_does": "AI notetaker that records and summarizes meetings",
+  "auth": [
+   "API key",
+   "OAuth2"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.fathom.ai/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 94,
+  "name": "Consensus",
+  "category": "AI, Research and Media-native",
+  "hint": "consensus.app (OAuth requested)",
+  "what_it_does": "AI search engine for scientific research papers",
+  "auth": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "access": "free",
+  "api_type": "MCP only",
+  "api_breadth": "narrow",
+  "mcp": "official",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://consensus.app/home/api/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI, Research and Media-native",
+  "hint": "reducto.ai (document parsing)",
+  "what_it_does": "Document parsing and extraction API for LLMs",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "none found",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.reducto.ai/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 96,
+  "name": "Devin",
+  "category": "AI, Research and Media-native",
+  "hint": "docs.devin.ai (MCP)",
+  "what_it_does": "Autonomous AI software engineer",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "medium",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.devin.ai/api-reference/overview"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 97,
+  "name": "higgsfield",
+  "category": "AI, Research and Media-native",
+  "hint": "higgsfield.ai/cli (content suite)",
+  "what_it_does": "AI video and image generation suite",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://docs.higgsfield.ai/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ },
+ {
+  "id": 98,
+  "name": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "hint": "github.com/mermaid-js/mermaid-cli",
+  "what_it_does": "CLI that renders Mermaid diagrams to SVG/PNG/PDF",
+  "auth": [
+   "None"
+  ],
+  "primary_auth": "None",
+  "access": "open",
+  "api_type": "CLI/Library",
+  "api_breadth": "narrow",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "local only",
+  "confidence": "high",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://github.com/mermaid-js/mermaid-cli"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 99,
+  "name": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "hint": "transcriptapi.com",
+  "what_it_does": "API that returns YouTube video transcripts",
+  "auth": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "access": "free",
+  "api_type": "REST",
+  "api_breadth": "narrow",
+  "mcp": "community",
+  "verdict": "ready",
+  "blocker": "none",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://transcriptapi.com/docs"
+   }
+  ],
+  "notes": "",
+  "self_serve": "self-serve"
+ },
+ {
+  "id": 100,
+  "name": "Grain",
+  "category": "AI, Research and Media-native",
+  "hint": "grain.com (meeting notes)",
+  "what_it_does": "AI meeting recorder and notes for revenue teams",
+  "auth": [
+   "Token",
+   "OAuth2"
+  ],
+  "primary_auth": "Token",
+  "access": "paid",
+  "api_type": "REST",
+  "api_breadth": "moderate",
+  "mcp": "none found",
+  "verdict": "friction",
+  "blocker": "paid plan",
+  "confidence": "low",
+  "evidence": [
+   {
+    "field": "auth",
+    "url": "https://developers.grain.com/"
+   }
+  ],
+  "notes": "",
+  "self_serve": "gated"
+ }
+]

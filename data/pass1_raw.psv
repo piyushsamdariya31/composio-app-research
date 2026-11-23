@@ -1,0 +1,102 @@
+# PASS 1 (frozen 2026-11-23): single-shot agent draft. Model answers from the hint + its own knowledge, no browsing.
+# id|what_it_does|auth|primary_auth|access|api_type|api_breadth|mcp|verdict|blocker|evidence_url|confidence
+1|Cloud CRM platform for sales, service and marketing|OAuth2,Other|OAuth2|free|REST+GraphQL|broad|official|ready|none|https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm|high
+2|CRM with marketing, sales and service hubs|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://developers.hubspot.com/docs/api/oauth-quickstart-guide|high
+3|Pipeline-focused sales CRM for small teams|OAuth2,Token|OAuth2|free|REST|broad|community|ready|none|https://pipedrive.readme.io/docs/core-api-concepts-authentication|high
+4|Flexible, data-driven CRM for modern GTM teams|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://docs.attio.com/rest-api/overview|medium
+5|Open-source CRM, self-hosted or cloud|API key|API key|free|REST+GraphQL|broad|community|ready|none|https://twenty.com/developers|medium
+6|Collaborative work-management and lightweight CRM workspaces|OAuth2|OAuth2|free|REST|broad|none found|ready|none|https://developers.podio.com/authentication|medium
+7|Zoho's CRM for sales automation and pipelines|OAuth2|OAuth2|free|REST|broad|official|ready|none|https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html|high
+8|Sales CRM with built-in calling and email|API key,OAuth2|OAuth2|trial|REST|broad|official|ready|none|https://developer.close.com/topics/authentication/|high
+9|CRM built for Google Workspace users|API key|API key|paid|REST|moderate|none found|friction|paid plan|https://developer.copper.com/introduction/authentication.html|medium
+10|Intapp CRM for dealmaking and capital-markets firms|OAuth2|OAuth2|partner|REST|moderate|none found|blocked|partnership|https://api.docs.dealcloud.com/docs/auth|medium
+11|Customer service ticketing and help center suite|OAuth2,Token,Basic|OAuth2|trial|REST|broad|community|ready|none|https://developer.zendesk.com/api-reference/introduction/security-and-auth/|high
+12|AI-first customer messaging and support platform|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://developers.intercom.com/docs/build-an-integration/learn-more/authentication|high
+13|Freshworks ticketing helpdesk for support teams|API key,Basic|API key|free|REST|broad|community|ready|none|https://developers.freshdesk.com/api/#authentication|high
+14|Shared inbox and customer operations platform|OAuth2,Token|OAuth2|free|REST|broad|community|ready|none|https://dev.frontapp.com/docs/authentication|high
+15|B2B support platform across Slack, email and chat|Token|Token|partner|REST|moderate|official|blocked|partnership|https://docs.usepylon.com/pylon-docs/developer/api/authentication|low
+16|Help desk with ticketing, live chat and call center|API key|API key|trial|REST|moderate|none found|ready|none|https://support.liveagent.com/061754-How-to-get-API-key|medium
+17|API-first B2B customer support platform|API key|API key|trial|GraphQL|broad|official|ready|none|https://www.plain.com/docs/graphql/authentication|high
+18|Shared inbox, help center and live chat|OAuth2|OAuth2|free|REST|broad|none found|ready|none|https://developer.helpscout.com/mailbox-api/overview/authentication/|high
+19|Helpdesk built for ecommerce brands|API key,Basic,OAuth2|OAuth2|trial|REST|broad|none found|ready|none|https://developers.gorgias.com/reference/authentication|high
+20|Customer-centric service platform for consumer brands|Token,Basic|Token|partner|REST|moderate|none found|blocked|partnership|https://developer.gladly.com/rest/#section/Getting-Started/Creating-API-Tokens|medium
+21|Team messaging and collaboration hub|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://api.slack.com/authentication/oauth-v2|high
+22|Programmable SMS, voice and messaging APIs|API key,Basic|Basic|trial|REST|broad|official|ready|none|https://www.twilio.com/docs/usage/requests-to-twilio|high
+23|Zoho's team chat and collaboration app|OAuth2|OAuth2|free|REST|moderate|official|ready|none|https://www.zoho.com/cliq/help/restapi/v2/#authentication|medium
+24|Enterprise super-app for chat, docs and meetings|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://open.larksuite.com/document/server-docs/getting-started/api-access-token/access-token-overview|medium
+25|Team chat app from CAKE.com|API key|API key|free|REST|narrow|none found|ready|none|https://pumble.com/help/integrations/add-pumble-apps/pumble-api/|low
+26|Voice, video and text community chat platform|OAuth2,Token|Token|free|REST|broad|community|ready|none|https://discord.com/developers/docs/topics/oauth2|high
+27|Cloud messaging app with an open Bot API|Token|Token|free|REST|broad|community|ready|none|https://core.telegram.org/bots/api#authorizing-your-bot|high
+28|WhatsApp Cloud API for business messaging|Token,OAuth2|Token|approval|REST|moderate|none found|friction|app review|https://developers.facebook.com/docs/whatsapp/cloud-api/get-started|high
+29|Cloud phone system for sales and support teams|OAuth2,Basic|OAuth2|trial|REST|moderate|none found|ready|none|https://developer.aircall.io/api-references/#authentication|medium
+30|Communications APIs for SMS, voice and video|API key,Basic,Other|Other|trial|REST|broad|community|ready|none|https://developer.vonage.com/en/getting-started/concepts/authentication|high
+31|Google's search and display advertising platform|OAuth2|OAuth2|approval|REST+GraphQL|broad|official|friction|app review|https://developers.google.com/google-ads/api/docs/api-policy/developer-token|high
+32|Ads across Facebook, Instagram and Messenger|OAuth2|OAuth2|approval|REST|broad|none found|friction|app review|https://developers.facebook.com/docs/marketing-api/get-started/authorization|high
+33|LinkedIn's B2B advertising platform|OAuth2|OAuth2|approval|REST|broad|none found|friction|app review|https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access|high
+34|All-in-one CRM and marketing platform for agencies|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://highlevel.stoplight.io/docs/integrations/a04191c0fabf9-authorization|medium
+35|Email marketing and audience automation|OAuth2,API key|OAuth2|free|REST|broad|community|ready|none|https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/|high
+36|Email and SMS marketing for ecommerce brands|OAuth2,API key|OAuth2|free|REST|broad|official|ready|none|https://developers.klaviyo.com/en/docs/authenticate_|high
+37|All-in-one funnel, email and course builder|API key|API key|free|REST|moderate|none found|ready|none|https://developer.systeme.io/reference/api|low
+38|Visual discovery and shopping platform|OAuth2|OAuth2|approval|REST|broad|none found|friction|app review|https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/|high
+39|Meta's text-based social app|OAuth2|OAuth2|approval|REST|moderate|none found|friction|app review|https://developers.facebook.com/docs/threads/get-started|medium
+40|Twilio's transactional and marketing email API|API key|API key|trial|REST|broad|none found|ready|none|https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication|high
+41|Commerce platform for online stores|OAuth2,Token|OAuth2|free|REST+GraphQL|broad|official|ready|none|https://shopify.dev/docs/apps/build/authentication-authorization|high
+42|Open-source ecommerce plugin for WordPress|API key,Basic,Other|API key|open|REST|broad|community|ready|none|https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication|high
+43|SaaS ecommerce platform for mid-market brands|OAuth2,Token|OAuth2|trial|REST+GraphQL|broad|none found|ready|none|https://developer.bigcommerce.com/docs/start/authentication|high
+44|Salesforce's enterprise B2C commerce platform|OAuth2|OAuth2|partner|REST|broad|none found|blocked|partnership|https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html|medium
+45|Enterprise ecommerce platform, open-source core|Other,Token|Token|open|REST+GraphQL|broad|none found|ready|none|https://developer.adobe.com/commerce/webapi/get-started/authentication/|medium
+46|Website builder with ecommerce|OAuth2,API key|API key|paid|REST|moderate|none found|friction|paid plan|https://developers.squarespace.com/commerce-apis/authentication-and-permissions|medium
+47|Ecommerce store builder that embeds anywhere|OAuth2,Token|Token|paid|REST|broad|none found|friction|paid plan|https://api-docs.ecwid.com/docs/get-access-token|medium
+48|Sell digital products and memberships directly|OAuth2|OAuth2|free|REST|narrow|none found|ready|none|https://gumroad.com/api#api-authentication|high
+49|Amazon marketplace seller APIs|OAuth2|OAuth2|approval|REST|broad|none found|friction|app review|https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications|high
+50|Creator monetization and payments platform|API key|API key|free|REST|narrow|none found|ready|none|https://fanbasis.com|low
+51|SEO data APIs: SERP, keywords, backlinks|Basic|Basic|trial|REST|broad|official|ready|none|https://docs.dataforseo.com/v3/auth/|high
+52|SEO platform for rank tracking and audits|API key|API key|paid|REST|moderate|none found|friction|paid plan|https://seranking.com/api/data/|medium
+53|SEO toolset for backlinks and keywords|API key|API key|paid|REST|broad|official|friction|paid plan|https://docs.ahrefs.com/docs/api/reference/introduction|high
+54|AI-powered web scraping API|API key|API key|free|REST|narrow|none found|ready|none|https://docs.mrscraper.com|low
+55|Platform to run web scrapers (Actors) at scale|Token,OAuth2|Token|free|REST|broad|official|ready|none|https://docs.apify.com/api/v2#authentication|high
+56|Turns websites into LLM-ready markdown and data|API key|API key|free|REST|moderate|official|ready|none|https://docs.firecrawl.dev/api-reference/introduction|high
+57|Web data platform: proxies, scrapers and datasets|API key|API key|trial|REST|broad|official|ready|none|https://docs.brightdata.com/api-reference/authentication|high
+58|Open-source CLI to find usernames across sites|None|None|open|CLI/Library|narrow|community|ready|local only|https://github.com/sherlock-project/sherlock|high
+59|Contact and company data enrichment API|API key|API key|trial|REST|narrow|none found|ready|none|https://waterfall.io|low
+60|GTM data enrichment and workflow platform|API key|API key|paid|REST|narrow|official|friction|paid plan|https://www.clay.com/university/guide/http-api-integration|low
+61|Code hosting and collaboration platform|OAuth2,Token,Other|OAuth2|free|REST+GraphQL|broad|official|ready|none|https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api|high
+62|Frontend cloud for deploying web apps|Token,OAuth2|Token|free|REST|broad|official|ready|none|https://vercel.com/docs/rest-api#authentication|high
+63|Web hosting and deployment platform|Token,OAuth2|Token|free|REST|broad|official|ready|none|https://docs.netlify.com/api/get-started/#authentication|high
+64|CDN, security and edge compute platform|Token,API key|Token|free|REST+GraphQL|broad|official|ready|none|https://developers.cloudflare.com/fundamentals/api/get-started/create-token/|high
+65|Postgres backend-as-a-service|Token,OAuth2,API key|Token|free|REST|broad|official|ready|none|https://supabase.com/docs/reference/api/introduction|high
+66|Graph database and AuraDB cloud service|OAuth2,Basic|OAuth2|free|REST|moderate|official|ready|none|https://neo4j.com/docs/aura/platform/api/authentication/|medium
+67|Cloud data warehouse and AI data cloud|Other,OAuth2,Token|Other|trial|REST|broad|official|ready|none|https://docs.snowflake.com/en/developer-guide/sql-api/authenticating|high
+68|Managed MongoDB cloud database service|API key,OAuth2|API key|free|REST|broad|official|ready|none|https://www.mongodb.com/docs/atlas/configure-api-access/|high
+69|Monitoring and observability platform|API key|API key|trial|REST|broad|official|ready|none|https://docs.datadoghq.com/api/latest/authentication/|high
+70|Error tracking and performance monitoring|Token,OAuth2|Token|free|REST|broad|official|ready|none|https://docs.sentry.io/api/auth/|high
+71|Connected workspace for docs, wikis and databases|OAuth2,Token|OAuth2|free|REST|moderate|official|ready|none|https://developers.notion.com/docs/authorization|high
+72|Spreadsheet-database hybrid for building apps|Token,OAuth2|OAuth2|free|REST|broad|community|ready|none|https://airtable.com/developers/web/api/authentication|high
+73|Issue tracking for software teams|OAuth2,API key|OAuth2|free|GraphQL|broad|official|ready|none|https://linear.app/developers/oauth-2-0-authentication|high
+74|Atlassian issue and project tracking|OAuth2,Token,Basic|OAuth2|free|REST|broad|official|ready|none|https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/|high
+75|Work management for teams and projects|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://developers.asana.com/docs/authentication|high
+76|Work OS for projects, CRM and workflows|OAuth2,Token|OAuth2|free|GraphQL|broad|official|ready|none|https://developer.monday.com/api-reference/docs/authentication|high
+77|All-in-one productivity and project management|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://developer.clickup.com/docs/authentication|high
+78|Docs that work like apps|Token|Token|free|REST|moderate|community|ready|none|https://coda.io/developers/apis/v1#section/Authentication|high
+79|Spreadsheet-style work management platform|OAuth2,Token|OAuth2|free|REST|broad|official|ready|none|https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication|medium
+80|Time tracking and invoicing|OAuth2,Token|OAuth2|free|REST|moderate|none found|ready|none|https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/|high
+81|Online payments infrastructure|API key|API key|free|REST|broad|official|ready|none|https://docs.stripe.com/api/authentication|high
+82|Connects apps to users' bank accounts|API key|API key|approval|REST|broad|official|friction|app review|https://plaid.com/docs/api/#api-access|high
+83|Cryptocurrency exchange trading APIs|API key,Other|API key|free|REST|broad|none found|ready|none|https://developers.binance.com/docs/binance-spot-api-docs/rest-api|medium
+84|NMI-powered payment gateway for merchants|API key|API key|partner|RPC/Other|narrow|none found|blocked|partnership|https://secure.nmi.com/merchants/resources/integration/integration_portal.php|low
+85|AI-powered payments platform|API key|API key|partner|REST|narrow|none found|blocked|partnership|https://ipayx.ai/docs|low
+86|Small-business accounting software|OAuth2|OAuth2|free|REST|broad|official|ready|none|https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0|high
+87|Cloud accounting for small businesses|OAuth2|OAuth2|free|REST|broad|official|ready|none|https://developer.xero.com/documentation/guides/oauth2/overview|high
+88|Corporate cards and spend management|OAuth2,Token|Token|approval|REST|broad|none found|friction|app review|https://developer.brex.com/docs/authentication/|medium
+89|Corporate cards and finance automation|OAuth2|OAuth2|approval|REST|broad|official|friction|app review|https://docs.ramp.com/developer-api/v1/authorization|medium
+90|Private capital markets data and research|API key|API key|partner|REST|broad|none found|blocked|partnership|https://pitchbook.com/data/api|medium
+91|Google's AI research notebook (Enterprise API)|OAuth2|OAuth2|paid|REST|narrow|none found|friction|paid plan|https://cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks|medium
+92|AI meeting transcription and notes|OAuth2|OAuth2|free|MCP only|narrow|official|ready|none|https://help.otter.ai/hc/en-us/articles/35287607466647|low
+93|AI notetaker that records and summarizes meetings|API key,OAuth2|API key|free|REST|narrow|community|ready|none|https://developers.fathom.ai/|medium
+94|AI search engine for scientific research papers|OAuth2|OAuth2|free|MCP only|narrow|official|ready|none|https://consensus.app/home/api/|low
+95|Document parsing and extraction API for LLMs|API key|API key|free|REST|narrow|none found|ready|none|https://docs.reducto.ai/|medium
+96|Autonomous AI software engineer|API key|API key|paid|REST|moderate|official|friction|paid plan|https://docs.devin.ai/api-reference/overview|medium
+97|AI video and image generation suite|API key|API key|paid|REST|moderate|official|friction|paid plan|https://docs.higgsfield.ai/|low
+98|CLI that renders Mermaid diagrams to SVG/PNG/PDF|None|None|open|CLI/Library|narrow|community|ready|local only|https://github.com/mermaid-js/mermaid-cli|high
+99|API that returns YouTube video transcripts|API key|API key|free|REST|narrow|community|ready|none|https://transcriptapi.com/docs|low
+100|AI meeting recorder and notes for revenue teams|Token,OAuth2|Token|paid|REST|moderate|none found|friction|paid plan|https://developers.grain.com/|low

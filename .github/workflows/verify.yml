@@ -1,0 +1,25 @@
+name: verify data
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pytest
+      - name: Tests (incl. the agent loop with a scripted model)
+        run: python -m pytest -q
+      - name: Loop A - 11 consistency rules on all 100 rows
+        run: python -m verify.validate final
+      - name: Loop A2 - cross-check against Composio's catalog
+        run: python -m verify.crosscheck_catalog final
+      - name: Accuracy vs browser-verified gold labels
+        run: python -m verify.score
+      - name: Rebuild the page and fail if it drifted from the data
+        run: |
+          python page/build.py
+          git diff --stat --exit-code docs/ || (echo "docs/ is out of date: run python page/build.py" && exit 1)

@@ -1,0 +1,315 @@
+[
+ {
+  "pass": "pass1",
+  "gold": "gold_sample.json",
+  "accuracy": 0.8583,
+  "hits": 103,
+  "total": 120,
+  "rows_fully_correct": 6,
+  "rows": 20,
+  "per_field": {
+   "auth": 0.9,
+   "primary_auth": 0.8,
+   "access": 0.85,
+   "api_type": 1.0,
+   "mcp": 0.7,
+   "verdict": 0.9
+  },
+  "auth_vendor_wording_exact": 0.9,
+  "misses": [
+   {
+    "id": 10,
+    "name": "DealCloud",
+    "field": "mcp",
+    "got": "none found",
+    "want": "official"
+   },
+   {
+    "id": 18,
+    "name": "Help Scout",
+    "field": "access",
+    "got": "free",
+    "want": "trial"
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "field": "primary_auth",
+    "got": "Basic",
+    "want": "API key"
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "field": "mcp",
+    "got": "official",
+    "want": "not official"
+   },
+   {
+    "id": 29,
+    "name": "Aircall",
+    "field": "primary_auth",
+    "got": "OAuth2",
+    "want": "Basic"
+   },
+   {
+    "id": 32,
+    "name": "Meta Ads",
+    "field": "mcp",
+    "got": "none found",
+    "want": "official"
+   },
+   {
+    "id": 41,
+    "name": "Shopify",
+    "field": "auth",
+    "got": "OAuth2/static secret",
+    "want": "OAuth2"
+   },
+   {
+    "id": 42,
+    "name": "WooCommerce",
+    "field": "auth",
+    "got": "Basic/Other/static secret",
+    "want": "Other/static secret"
+   },
+   {
+    "id": 42,
+    "name": "WooCommerce",
+    "field": "mcp",
+    "got": "community",
+    "want": "official"
+   },
+   {
+    "id": 57,
+    "name": "Bright Data",
+    "field": "access",
+    "got": "trial",
+    "want": "free"
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "field": "access",
+    "got": "trial",
+    "want": "approval"
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "field": "verdict",
+    "got": "ready",
+    "want": "friction"
+   },
+   {
+    "id": 63,
+    "name": "Netlify",
+    "field": "primary_auth",
+    "got": "Token",
+    "want": "OAuth2"
+   },
+   {
+    "id": 67,
+    "name": "Snowflake",
+    "field": "primary_auth",
+    "got": "Other",
+    "want": "OAuth2"
+   },
+   {
+    "id": 87,
+    "name": "Xero",
+    "field": "verdict",
+    "got": "ready",
+    "want": "friction"
+   },
+   {
+    "id": 98,
+    "name": "Mermaid CLI",
+    "field": "mcp",
+    "got": "community",
+    "want": "official"
+   },
+   {
+    "id": 100,
+    "name": "Grain",
+    "field": "mcp",
+    "got": "none found",
+    "want": "official"
+   }
+  ]
+ },
+ {
+  "pass": "pass2",
+  "gold": "gold_sample.json",
+  "accuracy": 0.9333,
+  "hits": 112,
+  "total": 120,
+  "rows_fully_correct": 13,
+  "rows": 20,
+  "per_field": {
+   "auth": 1.0,
+   "primary_auth": 0.95,
+   "access": 0.85,
+   "api_type": 1.0,
+   "mcp": 0.9,
+   "verdict": 0.9
+  },
+  "auth_vendor_wording_exact": 1.0,
+  "misses": [
+   {
+    "id": 18,
+    "name": "Help Scout",
+    "field": "access",
+    "got": "free",
+    "want": "trial"
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "field": "mcp",
+    "got": "official",
+    "want": "not official"
+   },
+   {
+    "id": 32,
+    "name": "Meta Ads",
+    "field": "mcp",
+    "got": "none found",
+    "want": "official"
+   },
+   {
+    "id": 57,
+    "name": "Bright Data",
+    "field": "access",
+    "got": "trial",
+    "want": "free"
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "field": "access",
+    "got": "partner",
+    "want": "approval"
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "field": "verdict",
+    "got": "blocked",
+    "want": "friction"
+   },
+   {
+    "id": 63,
+    "name": "Netlify",
+    "field": "primary_auth",
+    "got": "Token",
+    "want": "OAuth2"
+   },
+   {
+    "id": 87,
+    "name": "Xero",
+    "field": "verdict",
+    "got": "ready",
+    "want": "friction"
+   }
+  ]
+ },
+ {
+  "pass": "final",
+  "gold": "gold_sample.json",
+  "accuracy": 1.0,
+  "hits": 120,
+  "total": 120,
+  "rows_fully_correct": 20,
+  "rows": 20,
+  "per_field": {
+   "auth": 1.0,
+   "primary_auth": 1.0,
+   "access": 1.0,
+   "api_type": 1.0,
+   "mcp": 1.0,
+   "verdict": 1.0
+  },
+  "auth_vendor_wording_exact": 1.0,
+  "misses": []
+ },
+ {
+  "pass": "pass1",
+  "gold": "gold_holdout_b.json",
+  "accuracy": 0.9375,
+  "hits": 45,
+  "total": 48,
+  "rows_fully_correct": 5,
+  "rows": 8,
+  "per_field": {
+   "auth": 0.875,
+   "primary_auth": 1.0,
+   "access": 1.0,
+   "api_type": 1.0,
+   "mcp": 0.75,
+   "verdict": 1.0
+  },
+  "auth_vendor_wording_exact": 0.75,
+  "misses": [
+   {
+    "id": 1,
+    "name": "Salesforce",
+    "field": "auth",
+    "got": "OAuth2/Other",
+    "want": "OAuth2"
+   },
+   {
+    "id": 14,
+    "name": "Front",
+    "field": "mcp",
+    "got": "community",
+    "want": "official"
+   },
+   {
+    "id": 95,
+    "name": "Reducto",
+    "field": "mcp",
+    "got": "none found",
+    "want": "official"
+   }
+  ]
+ },
+ {
+  "pass": "pass2",
+  "gold": "gold_holdout_b.json",
+  "accuracy": 1.0,
+  "hits": 48,
+  "total": 48,
+  "rows_fully_correct": 8,
+  "rows": 8,
+  "per_field": {
+   "auth": 1.0,
+   "primary_auth": 1.0,
+   "access": 1.0,
+   "api_type": 1.0,
+   "mcp": 1.0,
+   "verdict": 1.0
+  },
+  "auth_vendor_wording_exact": 1.0,
+  "misses": []
+ },
+ {
+  "pass": "final",
+  "gold": "gold_holdout_b.json",
+  "accuracy": 1.0,
+  "hits": 48,
+  "total": 48,
+  "rows_fully_correct": 8,
+  "rows": 8,
+  "per_field": {
+   "auth": 1.0,
+   "primary_auth": 1.0,
+   "access": 1.0,
+   "api_type": 1.0,
+   "mcp": 1.0,
+   "verdict": 1.0
+  },
+  "auth_vendor_wording_exact": 1.0,
+  "misses": []
+ }
+]

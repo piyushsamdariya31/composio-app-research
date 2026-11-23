@@ -1,0 +1,45 @@
+name: Research one app
+# Runnable trigger: Actions tab -> "Research one app" -> Run workflow.
+# Needs repo secrets COMPOSIO_API_KEY and ANTHROPIC_API_KEY, and a Tavily and/or
+# Firecrawl connection for the Composio user id below.
+on:
+  workflow_dispatch:
+    inputs:
+      app_id:
+        description: "App id from data/apps.csv (1-100), e.g. 41 = Shopify"
+        required: true
+        default: "41"
+      composio_user_id:
+        description: "Composio user id that owns the Tavily / Firecrawl connection"
+        required: true
+        default: "default"
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Run the research agent
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m agent.run --only ${{ inputs.app_id }} --out ci_run --user-id ${{ inputs.composio_user_id }}
+      - name: Check the row against the rules and against the published row
+        run: |
+          python -m verify.validate ci_run
+          python - <<'PY'
+          import json
+          new = json.load(open("data/ci_run.json"))[0]
+          old = {r["id"]: r for r in json.load(open("data/final.json"))}[new["id"]]
+          for f in ["auth", "primary_auth", "access", "api_type", "mcp", "verdict", "blocker"]:
+              mark = "same" if new[f] == old[f] else "DIFFERENT"
+              print(f"{f:13} agent={new[f]!s:30} published={old[f]!s:30} {mark}")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-${{ inputs.app_id }}
+          path: |
+            data/ci_run.json
+            data/runs/ci_run/

@@ -1,0 +1,383 @@
+[
+ {
+  "id": 1,
+  "field": "auth",
+  "to": [
+   "OAuth2"
+  ],
+  "reason": "JWT bearer is an OAuth 2.0 flow, not a separate scheme; docs list OAuth 2.0 flows via external client / connected apps",
+  "src": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm"
+ },
+ {
+  "id": 4,
+  "field": "auth",
+  "to": [
+   "OAuth2",
+   "API key"
+  ],
+  "reason": "Attio calls the workspace credential an 'API key'",
+  "src": "https://docs.attio.com/rest-api/guides/authentication"
+ },
+ {
+  "id": 5,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Docs: 'connect apps with OAuth' in addition to API keys",
+  "src": "https://docs.twenty.com/developers/introduction"
+ },
+ {
+  "id": 9,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Docs list API keys and OAuth2.0 ('preferred approach for partner integrations')",
+  "src": "https://developer.copper.com/introduction/authentication.html"
+ },
+ {
+  "id": 10,
+  "field": "mcp",
+  "to": "official",
+  "reason": "DealCloud MCP documented by the vendor (OAuth on behalf of a user)",
+  "src": "https://api.docs.dealcloud.com/mcp/authentication"
+ },
+ {
+  "id": 11,
+  "field": "auth",
+  "to": [
+   "OAuth2",
+   "Token"
+  ],
+  "reason": "OAuth is the supported method; 'API token (deprecated)'; password Basic is not an API credential",
+  "src": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+ },
+ {
+  "id": 13,
+  "field": "auth",
+  "to": [
+   "API key"
+  ],
+  "reason": "API key is sent as the Basic username; Basic is only the transport (rubric)",
+  "src": "https://developers.freshdesk.com/api/"
+ },
+ {
+  "id": 14,
+  "field": "mcp",
+  "to": "official",
+  "reason": "Front documents an 'MCP server' token scope for Claude/ChatGPT",
+  "src": "https://dev.frontapp.com/docs/authentication"
+ },
+ {
+  "id": 17,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "API key via machine user, or an OAuth app to act as a workspace user",
+  "src": "https://www.plain.com/docs/graphql/authentication"
+ },
+ {
+  "id": 19,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Private app: email + API key (Basic is transport); public app: OAuth2 mandatory",
+  "src": "https://developers.gorgias.com/reference/authentication"
+ },
+ {
+  "id": 20,
+  "field": "auth",
+  "to": [
+   "Token"
+  ],
+  "reason": "Token-based Basic auth: the credential is an API token, Basic is transport",
+  "src": "https://developer.gladly.com/rest/"
+ },
+ {
+  "id": 20,
+  "field": "primary_auth",
+  "to": "Token",
+  "reason": "follows auth correction",
+  "src": "https://developer.gladly.com/rest/"
+ },
+ {
+  "id": 22,
+  "field": "primary_auth",
+  "to": "API key",
+  "reason": "Twilio's recommended credential is an API key (SID + secret); Account SID + Auth Token is the Basic login pair",
+  "src": "https://www.twilio.com/docs/usage/requests-to-twilio"
+ },
+ {
+  "id": 22,
+  "field": "mcp",
+  "to": "official",
+  "reason": "Twilio Labs MCP server (twilio-labs org) exposes Twilio APIs",
+  "src": "https://github.com/twilio-labs/mcp"
+ },
+ {
+  "id": 29,
+  "field": "primary_auth",
+  "to": "Basic",
+  "reason": "OAuth is only for Technology Partners listed on the Aircall Marketplace (request form); customers use api_id + api_token Basic",
+  "src": "https://developers.aircall.io/api-references"
+ },
+ {
+  "id": 30,
+  "field": "auth",
+  "to": [
+   "API key",
+   "Other"
+  ],
+  "reason": "API key + secret (Basic is transport) and application JWT",
+  "src": "https://developer.vonage.com/en/getting-started/concepts/authentication"
+ },
+ {
+  "id": 30,
+  "field": "primary_auth",
+  "to": "API key",
+  "reason": "key + secret is the credential a user can paste; JWT needs an app private key",
+  "src": "https://developer.vonage.com/en/getting-started/concepts/authentication"
+ },
+ {
+  "id": 41,
+  "field": "auth",
+  "to": [
+   "OAuth2"
+  ],
+  "reason": "Admin-created custom apps (static tokens) are legacy and can no longer be created; token exchange / auth code / client credentials only",
+  "src": "https://shopify.dev/docs/apps/build/authentication-authorization"
+ },
+ {
+  "id": 42,
+  "field": "auth",
+  "to": [
+   "API key",
+   "Other"
+  ],
+  "reason": "Consumer key/secret (Basic over HTTPS is transport) or OAuth 1.0a one-legged",
+  "src": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication"
+ },
+ {
+  "id": 42,
+  "field": "mcp",
+  "to": "official",
+  "reason": "WooCommerce MCP integration documented by WooCommerce (developer preview)",
+  "src": "https://developer.woocommerce.com/docs/features/mcp/"
+ },
+ {
+  "id": 51,
+  "field": "access",
+  "to": "free",
+  "reason": "'create a free account'; pay-as-you-go with free starter credit counts as free (rubric)",
+  "src": "https://docs.dataforseo.com/v3/auth/"
+ },
+ {
+  "id": 52,
+  "field": "mcp",
+  "to": "official",
+  "reason": "SE Ranking lists an MCP integration; com.seranking/mcp in the MCP Registry",
+  "src": "https://seranking.com/api/data/"
+ },
+ {
+  "id": 53,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Composio's catalog ships OAuth2 + API Key for Ahrefs (second source); docs page shows API key",
+  "src": "https://docs.composio.dev/toolkits/ahrefs"
+ },
+ {
+  "id": 54,
+  "field": "auth",
+  "to": [
+   "Token"
+  ],
+  "reason": "vendor wording: 'API token for authentication'",
+  "src": "https://docs.mrscraper.com/"
+ },
+ {
+  "id": 54,
+  "field": "primary_auth",
+  "to": "Token",
+  "reason": "follows auth correction",
+  "src": "https://docs.mrscraper.com/"
+ },
+ {
+  "id": 54,
+  "field": "mcp",
+  "to": "official",
+  "reason": "MrScraper MCP Server in vendor docs; io.github.mrscraper-com/mrscraper-mcp in registry",
+  "src": "https://docs.mrscraper.com/"
+ },
+ {
+  "id": 59,
+  "field": "access",
+  "to": "partner",
+  "reason": "Site is sales-led ('Book a Call', founder-led); no self-serve signup on page",
+  "src": "https://waterfall.io/"
+ },
+ {
+  "id": 59,
+  "field": "verdict",
+  "to": "blocked",
+  "reason": "follows access",
+  "src": "https://waterfall.io/"
+ },
+ {
+  "id": 59,
+  "field": "blocker",
+  "to": "partnership",
+  "reason": "follows access",
+  "src": "https://waterfall.io/"
+ },
+ {
+  "id": 67,
+  "field": "primary_auth",
+  "to": "OAuth2",
+  "reason": "OAuth is the delegated-user option; key-pair JWT is service auth",
+  "src": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating"
+ },
+ {
+  "id": 69,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Composio's catalog ships OAuth2 for Datadog (second source)",
+  "src": "https://docs.composio.dev/toolkits/datadog"
+ },
+ {
+  "id": 72,
+  "field": "mcp",
+  "to": "official",
+  "reason": "com.airtable/mcp is a verified-namespace server in the MCP Registry",
+  "src": "https://registry.modelcontextprotocol.io/v0/servers?search=airtable"
+ },
+ {
+  "id": 74,
+  "field": "auth",
+  "to": [
+   "OAuth2",
+   "Token"
+  ],
+  "reason": "Email + API token over Basic (transport); passwords deprecated; OAuth 2.0 (3LO)",
+  "src": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/"
+ },
+ {
+  "id": 81,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "Composio's catalog ships OAuth2 for Stripe (Stripe Connect / Stripe Apps OAuth); docs page shows API keys",
+  "src": "https://docs.composio.dev/toolkits/stripe"
+ },
+ {
+  "id": 85,
+  "field": "mcp",
+  "to": "official",
+  "reason": "io.github.iPAYX-Technologies/mcp-fx-audit is in the MCP Registry under the vendor's GitHub org",
+  "src": "https://registry.modelcontextprotocol.io/v0/servers?search=ipayx"
+ },
+ {
+  "id": 93,
+  "field": "mcp",
+  "to": "official",
+  "reason": "ai.fathom.api/mcp is a verified-namespace server in the MCP Registry",
+  "src": "https://registry.modelcontextprotocol.io/v0/servers?search=fathom"
+ },
+ {
+  "id": 94,
+  "field": "api_type",
+  "to": "REST",
+  "reason": "Consensus API exists, key created on site",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 94,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "API key for the API; MCP server uses OAuth (Composio consensus_mcp = DCR OAuth)",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 94,
+  "field": "primary_auth",
+  "to": "API key",
+  "reason": "API key is the documented API credential",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 94,
+  "field": "access",
+  "to": "paid",
+  "reason": "'Included on every paid plan'",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 94,
+  "field": "verdict",
+  "to": "friction",
+  "reason": "follows access",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 94,
+  "field": "blocker",
+  "to": "paid plan",
+  "reason": "follows access",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 95,
+  "field": "mcp",
+  "to": "official",
+  "reason": "Reducto MCP server in vendor docs",
+  "src": "https://docs.reducto.ai/"
+ },
+ {
+  "id": 97,
+  "field": "auth",
+  "to": [
+   "API key",
+   "OAuth2"
+  ],
+  "reason": "CLI/MCP sign-in via browser OAuth ('higgsfield auth login', MCP needs no API key) plus API keys",
+  "src": "https://higgsfield.ai/cli"
+ },
+ {
+  "id": 98,
+  "field": "mcp",
+  "to": "official",
+  "reason": "com.mermaidchart/mermaid-mcp (Mermaid Chart, the company behind mermaid-js) in the MCP Registry",
+  "src": "https://registry.modelcontextprotocol.io/v0/servers?search=mermaid"
+ },
+ {
+  "id": 99,
+  "field": "mcp",
+  "to": "official",
+  "reason": "TranscriptAPI docs cover its MCP integration; com.transcriptapi/... in registry",
+  "src": "https://transcriptapi.com/docs"
+ },
+ {
+  "id": 100,
+  "field": "mcp",
+  "to": "official",
+  "reason": "Grain developer site links MCP Docs",
+  "src": "https://developers.grain.com/"
+ }
+]

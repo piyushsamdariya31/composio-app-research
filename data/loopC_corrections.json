@@ -1,0 +1,454 @@
+[
+ {
+  "id": 18,
+  "field": "access",
+  "to": "trial",
+  "reason": "AUDIT: pricing table shows 'API access' = no on Free; API only on Standard/Plus/Pro (15-day trial)",
+  "src": "https://www.helpscout.com/pricing/"
+ },
+ {
+  "id": 22,
+  "field": "mcp",
+  "to": "community",
+  "reason": "AUDIT: Twilio's official MCP (Public Beta) only searches public docs and 'does not connect to a Twilio account'; account-acting twilio-labs/mcp is experimental, last commit Jul 2025",
+  "src": "https://www.twilio.com/docs/ai/mcp"
+ },
+ {
+  "id": 32,
+  "field": "mcp",
+  "to": "official",
+  "reason": "AUDIT: Meta-hosted Ads MCP at https://mcp.facebook.com/ads creates and edits ads, ad sets, campaigns",
+  "src": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+ },
+ {
+  "id": 57,
+  "field": "access",
+  "to": "free",
+  "reason": "AUDIT: pricing page 'Free tier pricing available'",
+  "src": "https://brightdata.com/pricing"
+ },
+ {
+  "id": 59,
+  "field": "access",
+  "to": "approval",
+  "reason": "AUDIT: keys come from an API-Key-Request form or a booked call; pay-as-you-go, no contract",
+  "src": "https://www.waterfall.io/"
+ },
+ {
+  "id": 59,
+  "field": "verdict",
+  "to": "friction",
+  "reason": "AUDIT: follows access",
+  "src": "https://www.waterfall.io/"
+ },
+ {
+  "id": 59,
+  "field": "blocker",
+  "to": "app review",
+  "reason": "AUDIT: vendor must issue the key",
+  "src": "https://www.waterfall.io/"
+ },
+ {
+  "id": 63,
+  "field": "primary_auth",
+  "to": "OAuth2",
+  "reason": "AUDIT: OAuth2 apps for public integrations exist; rubric says primary = OAuth2 when third-party apps can use it",
+  "src": "https://docs.netlify.com/api/get-started/"
+ },
+ {
+  "id": 87,
+  "field": "verdict",
+  "to": "friction",
+  "reason": "AUDIT: 2026 developer pricing: free Starter tier capped at 5 connections; Core A$35/mo (50), Plus A$245 (1000), Advanced A$1445 (10,000); certification + bulk-connection approval",
+  "src": "https://developer.xero.com/pricing"
+ },
+ {
+  "id": 87,
+  "field": "blocker",
+  "to": "paid plan",
+  "reason": "AUDIT: a multi-tenant toolkit needs a paid tier",
+  "src": "https://developer.xero.com/pricing"
+ },
+ {
+  "id": 62,
+  "field": "primary_auth",
+  "to": "OAuth2",
+  "reason": "SYSTEMIC (primary-auth rule found by audit): Vercel offers OAuth for integrations",
+  "src": "https://docs.composio.dev/toolkits/vercel"
+ },
+ {
+  "id": 65,
+  "field": "primary_auth",
+  "to": "OAuth2",
+  "reason": "SYSTEMIC (primary-auth rule): Management API supports OAuth2 apps acting for users",
+  "src": "https://supabase.com/docs/reference/api/introduction"
+ },
+ {
+  "id": 70,
+  "field": "primary_auth",
+  "to": "OAuth2",
+  "reason": "SYSTEMIC (primary-auth rule): OAuth2 for third-party apps incl. device flow",
+  "src": "https://docs.sentry.io/api/auth/"
+ },
+ {
+  "id": 13,
+  "field": "access",
+  "to": "trial",
+  "reason": "SYSTEMIC (free-plan != free-API rule): pricing page offers only a 14-day free trial, no free plan",
+  "src": "https://www.freshworks.com/freshdesk/pricing/"
+ },
+ {
+  "id": 79,
+  "field": "access",
+  "to": "trial",
+  "reason": "SYSTEMIC (free-plan != free-API rule): API 'Required plan: Business, Enterprise, or Advanced Work Management'; 30-day trial",
+  "src": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started"
+ },
+ {
+  "id": 37,
+  "field": "confidence",
+  "to": "high",
+  "reason": "BROWSER: Free plan includes 30 API requests/min; Public API covers contacts, tags, price plans, webhooks",
+  "src": "https://systeme.io/pricing"
+ },
+ {
+  "id": 50,
+  "field": "what_it_does",
+  "to": "Creator commerce platform, now rebranded Commas (checkout, funnels, courses)",
+  "reason": "BROWSER: fanbasis.com redirects to commas.com: 'FanBasis is now Commas!'",
+  "src": "https://commas.com/"
+ },
+ {
+  "id": 50,
+  "field": "auth",
+  "to": [
+   "Other"
+  ],
+  "reason": "BROWSER: no public API docs; auth scheme not published",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 50,
+  "field": "primary_auth",
+  "to": "Other",
+  "reason": "follows auth",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 50,
+  "field": "access",
+  "to": "partner",
+  "reason": "BROWSER: 'APIs and embeddable components' for enterprises, via Contact Us",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 50,
+  "field": "api_type",
+  "to": "None public",
+  "reason": "BROWSER: API exists for enterprise customers but no public documentation",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 50,
+  "field": "verdict",
+  "to": "blocked",
+  "reason": "follows access/api",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 50,
+  "field": "blocker",
+  "to": "no public API",
+  "reason": "follows api",
+  "src": "https://commas.com/enterprises"
+ },
+ {
+  "id": 54,
+  "field": "confidence",
+  "to": "high",
+  "reason": "BROWSER: Free plan, no credit card; API token",
+  "src": "https://mrscraper.com/pricing"
+ },
+ {
+  "id": 55,
+  "field": "auth",
+  "to": [
+   "Token"
+  ],
+  "reason": "BROWSER: integrations docs describe only the secret API token; no OAuth evidence found (pass-1 claim unsupported)",
+  "src": "https://docs.apify.com/integrations/api"
+ },
+ {
+  "id": 60,
+  "field": "access",
+  "to": "free",
+  "reason": "BROWSER: 'Build with Clay via CLI / API: 100 search results / 30 days' on the Free plan",
+  "src": "https://www.clay.com/pricing"
+ },
+ {
+  "id": 60,
+  "field": "verdict",
+  "to": "ready",
+  "reason": "follows access",
+  "src": "https://www.clay.com/pricing"
+ },
+ {
+  "id": 60,
+  "field": "blocker",
+  "to": "none",
+  "reason": "follows access",
+  "src": "https://www.clay.com/pricing"
+ },
+ {
+  "id": 60,
+  "field": "confidence",
+  "to": "medium",
+  "reason": "API limits per plan confirmed; API reference not read",
+  "src": "https://www.clay.com/pricing"
+ },
+ {
+  "id": 84,
+  "field": "what_it_does",
+  "to": "White-label NMI payment gateway sold through resellers",
+  "reason": "BROWSER/SEARCH: no 'Paygent Connect' product page found; researched the NMI gateway it runs on",
+  "src": "https://docs.nmi.com"
+ },
+ {
+  "id": 84,
+  "field": "api_type",
+  "to": "REST",
+  "reason": "NMI v4/v5 JSON APIs plus Direct Post; 'API Keys are used to access Gateway APIs'",
+  "src": "https://docs.nmi.com"
+ },
+ {
+  "id": 85,
+  "field": "what_it_does",
+  "to": "FX audit engine that scores bank FX fees, via API and MCP",
+  "reason": "BROWSER: ipayx.ai is an 'MCP-native FX audit engine'; hint URL ipayx.ai/docs is a 404",
+  "src": "https://www.ipayx.ai/developers"
+ },
+ {
+  "id": 85,
+  "field": "access",
+  "to": "free",
+  "reason": "BROWSER: 'Get API Key', 'Try Sandbox', free allowance of 3 audits per IP per month",
+  "src": "https://www.ipayx.ai/developers"
+ },
+ {
+  "id": 85,
+  "field": "verdict",
+  "to": "ready",
+  "reason": "follows access",
+  "src": "https://www.ipayx.ai/developers"
+ },
+ {
+  "id": 85,
+  "field": "blocker",
+  "to": "none",
+  "reason": "follows access",
+  "src": "https://www.ipayx.ai/developers"
+ },
+ {
+  "id": 85,
+  "field": "confidence",
+  "to": "medium",
+  "reason": "developer page read; auth header not shown",
+  "src": "https://www.ipayx.ai/developers"
+ },
+ {
+  "id": 92,
+  "field": "confidence",
+  "to": "medium",
+  "reason": "BROWSER: real MCP article found (pass-1 evidence URL was a 404, an invented article id); OAuth-authenticated MCP",
+  "src": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+ },
+ {
+  "id": 99,
+  "field": "confidence",
+  "to": "high",
+  "reason": "BROWSER: 'Get a free API key'; free tier",
+  "src": "https://transcriptapi.com/#pricing"
+ },
+ {
+  "id": 100,
+  "field": "confidence",
+  "to": "high",
+  "reason": "BROWSER: Workspace API & webhooks on Business; Basic MCP on Free",
+  "src": "https://grain.com/pricing"
+ },
+ {
+  "id": 15,
+  "field": "confidence",
+  "to": "high",
+  "reason": "pricing page: no self-serve, Book a demo / Talk to sales",
+  "src": "https://www.usepylon.com/pricing"
+ },
+ {
+  "id": 25,
+  "field": "confidence",
+  "to": "high",
+  "reason": "API addon key flow documented",
+  "src": "https://pumble.com/help/integrations/add-pumble-apps/api-keys-integration"
+ },
+ {
+  "id": 69,
+  "field": "access",
+  "to": "free",
+  "reason": "BROWSER: pricing page has a Free tier (infrastructure monitoring) alongside the trial",
+  "src": "https://www.datadoghq.com/pricing/"
+ },
+ {
+  "id": 48,
+  "field": "api_breadth",
+  "to": "moderate",
+  "reason": "BROWSER: Products, Resource subscriptions, Sales, Subscribers, Licenses; OAuth app registration",
+  "src": "https://gumroad.com/api"
+ },
+ {
+  "id": 47,
+  "field": "confidence",
+  "to": "high",
+  "reason": "BROWSER: 'Only stores on paid plans can access API' (free upgrade by email for app developers)",
+  "src": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+ },
+ {
+  "id": 94,
+  "field": "confidence",
+  "to": "medium",
+  "reason": "API plan gate read; MCP plan gate not read",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 97,
+  "field": "confidence",
+  "to": "medium",
+  "reason": "CLI/MCP page read; pricing not read",
+  "src": "https://higgsfield.ai/cli"
+ },
+ {
+  "id": 5,
+  "field": "primary_reason",
+  "to": "API key is the documented path; OAuth 'connect apps' is not documented for third-party multi-tenant use",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.twenty.com/developers/introduction"
+ },
+ {
+  "id": 9,
+  "field": "primary_reason",
+  "to": "OAuth is for partner integrations; users generate API keys in settings",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developer.copper.com/introduction/authentication.html"
+ },
+ {
+  "id": 17,
+  "field": "primary_reason",
+  "to": "API keys via machine users are the documented path; OAuth apps act as one workspace user",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://www.plain.com/docs/graphql/authentication"
+ },
+ {
+  "id": 26,
+  "field": "primary_reason",
+  "to": "OAuth2 user scopes cannot act inside servers; messaging and moderation need a bot token",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.discord.com/developers/reference"
+ },
+ {
+  "id": 28,
+  "field": "primary_reason",
+  "to": "System-user access tokens are the Cloud API credential; OAuth via Embedded Signup needs Tech Provider approval",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started"
+ },
+ {
+  "id": 29,
+  "field": "primary_reason",
+  "to": "OAuth only for marketplace Technology Partners (request form)",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developers.aircall.io/api-references"
+ },
+ {
+  "id": 46,
+  "field": "primary_reason",
+  "to": "OAuth clients must be reviewed and approved; API keys are self-serve on Commerce Advanced",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions"
+ },
+ {
+  "id": 47,
+  "field": "primary_reason",
+  "to": "Custom-app access tokens are issued automatically; OAuth is for App Market apps",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+ },
+ {
+  "id": 53,
+  "field": "primary_reason",
+  "to": "API key is the documented credential; OAuth evidence is only Composio's catalog",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.ahrefs.com/docs/api/reference/introduction"
+ },
+ {
+  "id": 68,
+  "field": "primary_reason",
+  "to": "Atlas OAuth is service-account client credentials, not user delegation",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://www.mongodb.com/docs/atlas/configure-api-access/"
+ },
+ {
+  "id": 69,
+  "field": "primary_reason",
+  "to": "OAuth is for Datadog partner integrations; API + application keys are self-serve",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.datadoghq.com/api/latest/authentication/"
+ },
+ {
+  "id": 81,
+  "field": "primary_reason",
+  "to": "Stripe recommends restricted API keys; OAuth exists only for Connect / Stripe Apps",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://docs.stripe.com/api/authentication"
+ },
+ {
+  "id": 88,
+  "field": "primary_reason",
+  "to": "OAuth is partner-only; customers use dashboard user tokens",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developer.brex.com/docs/authentication/"
+ },
+ {
+  "id": 93,
+  "field": "primary_reason",
+  "to": "API keys are self-serve in the Quickstart; OAuth app registration path not verified",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developers.fathom.ai/"
+ },
+ {
+  "id": 94,
+  "field": "primary_reason",
+  "to": "OAuth is used by the MCP server; the REST API uses keys",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://consensus.app/home/api/"
+ },
+ {
+  "id": 97,
+  "field": "primary_reason",
+  "to": "OAuth is the CLI/MCP browser login; the API uses keys",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://higgsfield.ai/cli"
+ },
+ {
+  "id": 100,
+  "field": "primary_reason",
+  "to": "PATs are the documented credential; other methods are not named",
+  "reason": "Rule 11: justify non-OAuth primary",
+  "src": "https://developers.grain.com/"
+ },
+ {
+  "id": 59,
+  "field": "confidence",
+  "to": "high",
+  "reason": "browser-audited (gold sample)",
+  "src": "https://www.waterfall.io/"
+ }
+]

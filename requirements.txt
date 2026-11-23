@@ -1,0 +1,6 @@
+# verification + page build: standard library only
+pytest>=8
+# live research agent
+composio>=0.34
+composio-anthropic>=0.34
+anthropic>=0.40
